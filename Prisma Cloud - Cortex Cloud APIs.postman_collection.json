@@ -1,0 +1,2718 @@
+{
+    "info": {
+    "_postman_id": "42d14199-d0a7-48af-851d-25e651ff4c57",
+		"name": "Prisma Cloud to Cortex Cloud API Mappings - Complete Collection",
+		"description": "Complete API mappings from Prisma Cloud to Cortex Cloud APIs - All 123+ endpoints included",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34538003"
+  },
+	"item": [
+		{
+			"name": "Issues",
+			"item": [
+				{
+					"name": "Retrieve issues based on filters (Get Code Secrets Findings)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/search",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "search"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": [\n      {\n        \"field\": \"detection.method\",\n        \"operator\": \"in\",\n        \"value\": [\"CAS_SECRET_SCANNER\"]\n      }\n    ],\n    \"search_from\": 0,\n    \"search_to\": 100,\n    \"sort\": {\n      \"field\": \"id\",\n      \"keyword\": \"asc\"\n    },\n    \"include_fields\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Code Secrets Findings, /api/v2/code-issues/branch_scan field = detection.method value = CAS_SECRET_SCANNER\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Retrieve issues based on filters (Get IaC Findings)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/search",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "search"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": [\n      {\n        \"field\": \"detection.method\",\n        \"operator\": \"in\",\n        \"value\": [\"CAS_IAC_SCANNER\"]\n      }\n    ],\n    \"search_from\": 0,\n    \"search_to\": 100,\n    \"sort\": {\n      \"field\": \"id\",\n      \"keyword\": \"asc\"\n    },\n    \"include_fields\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get IaC Findings, /api/v2/code-issues/branch_scan field = detection.method value = CAS_IAC_SCANNER\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Retrieve issues based on filters (Get Code Package Vulnerability Findings)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/search",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "search"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": [\n      {\n        \"field\": \"detection.method\",\n        \"operator\": \"in\",\n        \"value\": [\"CAS_CVE_SCANNER\"]\n      }\n    ],\n    \"search_from\": 0,\n    \"search_to\": 100,\n    \"sort\": {\n      \"field\": \"id\",\n      \"keyword\": \"asc\"\n    },\n    \"include_fields\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Code Package Vulnerability Findings, /api/v2/code-issues/branch_scan field = detection.method value = CAS_CVE_SCANNER\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Retrieve issues based on filters (Get Code Package License Findings)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/search",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "search"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": [\n      {\n        \"field\": \"detection.method\",\n        \"operator\": \"in\",\n        \"value\": [\"CAS_LICENSE_SCANNER\"]\n      }\n    ],\n    \"search_from\": 0,\n    \"search_to\": 100,\n    \"sort\": {\n      \"field\": \"id\",\n      \"keyword\": \"asc\"\n    },\n    \"include_fields\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Code Package License Findings, /api/v2/code-issues/branch_scan field = detection.method value = CAS_LICENSE_SCANNER\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Retrieve issues based on filters (Get Code Package Operational Risk Findings)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/search",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "search"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": [\n      {\n        \"field\": \"detection.method\",\n        \"operator\": \"in\",\n        \"value\": [\"CAS_OPERATIONAL_RISK_SCANNER\"]\n      }\n    ],\n    \"search_from\": 0,\n    \"search_to\": 100,\n    \"sort\": {\n      \"field\": \"id\",\n      \"keyword\": \"asc\"\n    },\n    \"include_fields\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Code Package Operational Risk Findings, /api/v2/code-issues/branch_scan field = detection.method value = CAS_OPERATIONAL_RISK_SCANNER\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Retrieve issues based on filters (LIST Alert Counts)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/search",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "search"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": [\n      {\n        \"field\": \"detection.method\",\n        \"operator\": \"in\",\n        \"value\": [\"CAS_CVE_SCANNER\"]\n      }\n    ],\n    \"search_from\": 0,\n    \"search_to\": 100,\n    \"sort\": {\n      \"field\": \"id\",\n      \"keyword\": \"asc\"\n    },\n    \"include_fields\": []\n  },\n  \"// Comment\": \"Prisma Cloud: LIST Alert Counts, /alert/policy field = detection.method value = CAS_CVE_SCANNER\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Update existing issue (Snooze Unmanaged Assets)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/{issue-id}",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "{issue-id}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"Resolved\",\n  \"status_resolution_reason\": \"Snoozed\",\n  \"// Comment\": \"Prisma Cloud: Snooze Unmanaged Assets, /asm/api/v1/asset/snooze // Every unmanaged asset on the cortex cloud will create an issue. status = 'Resolved' // to snooze an asset.\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Update existing issue (Un-snooze Unmanaged Assets)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/{issue-id}",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "{issue-id}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"New\",\n  \"status_resolution_reason\": \"Unsnoozed\",\n  \"// Comment\": \"Prisma Cloud: Un-snooze Unmanaged Assets, /asm/api/v1/asset/reopen status = 'New' // to unsnooze an asset.\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Retrieve issues based on filters (List Alerts V2 - GET)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/search",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "search"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: List Alerts V2 - GET, /alert // 'Alerts' are referred to as 'Issues' in Cortex Cloud. Filters = []\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Retrieve issues based on filters (Alert Info)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/search",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "search"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Alert Info, /alert/:id\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Retrieve issues based on filters (Search Alerts by ID)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/search",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "search"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Search Alerts by ID, /search/alert // Retrieve cases based on filters // Use /public_api/v1/case/artifacts/{case-id} (for case details)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Retrieve issues based on filters (Submit Job to List Alerts)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/search",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "search"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": [\n      {\n        \"field\": \"issue_id\",\n        \"operator\": \"in\",\n        \"value\": [0]\n      }\n    ],\n    \"search_from\": 0,\n    \"search_to\": 100,\n    \"sort\": {\n      \"field\": \"id\",\n      \"keyword\": \"asc\"\n    },\n    \"include_fields\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Submit Job to List Alerts, /alert/jobs 1. Retrieve issues based on filters (if issue id is known) dataset in(issues)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Retrieve issues based on filters (Get Alerts Count By Status)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/search",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "search"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": [\n      {\n        \"field\": \"status.progress\",\n        \"operator\": \"in\",\n        \"value\": [\"RESOLVED\"]\n      }\n    ],\n    \"search_from\": 0,\n    \"search_to\": 100,\n    \"sort\": {\n      \"field\": \"id\",\n      \"keyword\": \"asc\"\n    },\n    \"include_fields\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Alerts Count By Status, /alert/count/:status field = status.progress value = RESOLVED // (e.g. is for resolved issues)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Retrieve issues based on filters (Get Code Issues from Periodic Scans)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/search",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "search"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": [\n      {\n        \"field\": \"detection.method\",\n        \"operator\": \"in\",\n        \"value\": [\"CAS_CVE_SCANNER\"]\n      }\n    ],\n    \"search_from\": 0,\n    \"search_to\": 100,\n    \"sort\": {\n      \"field\": \"id\",\n      \"keyword\": \"asc\"\n    },\n    \"include_fields\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Code Issues from Periodic Scans, /api/v2/code-issues/branch_scan field = detection.method value = CAS_CVE_SCANNER\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Update existing issue (Dismiss Alerts)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/{issue-id}",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "{issue-id}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"Resolved\",\n  \"status_resolution_reason\": \"Dismissed\",\n  \"// Comment\": \"Prisma Cloud: Dismiss Alerts, /alert/dismiss Status = Resolved Status_resolution_reason = <any>\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Retrieve issues based on filters (List Alerts - POST)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/search",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "search"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: List Alerts, /alert Filters = [ ]\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Update existing issue (Reopen Alerts)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/{issue-id}",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "{issue-id}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"New\",\n  \"status_resolution_reason\": \"Reopened\",\n  \"// Comment\": \"Prisma Cloud: Reopen Alerts, /alert/reopen Status = New Status_resolution_reason = <any>\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Retrieve issues based on filters (Get Issue Details)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/search",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "search"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": [\n      {\n        \"field\": \"issue_id\",\n        \"operator\": \"in\",\n        \"value\": [\"<...>\"]\n      }\n    ],\n    \"search_from\": 0,\n    \"search_to\": 100,\n    \"sort\": {\n      \"field\": \"id\",\n      \"keyword\": \"asc\"\n    },\n    \"include_fields\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Issue Details, /alert/:id issue_id = <...>\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Retrieve issues based on filters (Lists All Errors in File Path)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/search",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "search"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": [\n      {\n        \"field\": \"detection.method\",\n        \"operator\": \"in\",\n        \"value\": [\"CAS_SECRET_SCANNER\", \"CAS_IAC_SCANNER\", \"CAS_CVE_SCANNER\", \"CAS_License_SCANNER\", \"CAS_OPERATIONAL_RISK_SCANNER\"]\n      }\n    ],\n    \"search_from\": 0,\n    \"search_to\": 100,\n    \"sort\": {\n      \"field\": \"id\",\n      \"keyword\": \"asc\"\n    },\n    \"include_fields\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Lists All Errors in File Path, /code/api/v1/errors/file field = detection.method value = CAS_SECRET_SCANNER OR field = detection.method value = CAS_IAC_SCANNER OR field = detection.method value = CAS_CVE_SCANNER OR field = detection.method value = CAS_License_SCANNER OR field = detection.method value = CAS_OPERATIONAL_RISK_SCANNER\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Retrieve issues based on filters (Lists Files with Errors)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/v1/issue/search",
+							"host": ["{{baseUrl}}"],
+							"path": ["v1", "issue", "search"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": [\n      {\n        \"field\": \"detection.method\",\n        \"operator\": \"in\",\n        \"value\": [\"CAS_SECRET_SCANNER\", \"CAS_IAC_SCANNER\", \"CAS_CVE_SCANNER\", \"CAS_License_SCANNER\", \"CAS_OPERATIONAL_RISK_SCANNER\"]\n      }\n    ],\n    \"search_from\": 0,\n    \"search_to\": 100,\n    \"sort\": {\n      \"field\": \"id\",\n      \"keyword\": \"asc\"\n    },\n    \"include_fields\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Lists Files with Errors, /code/api/v1/errors/files field = detection.method value = CAS_SECRET_SCANNER OR field = detection.method value = CAS_IAC_SCANNER OR field = detection.method value = CAS_CVE_SCANNER OR field = detection.method value = CAS_License_SCANNER OR field = detection.method value = CAS_OPERATIONAL_RISK_SCANNER\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Vulnerability Management APIs",
+			"item": [
+				{
+					"name": "Get list of vulnerabilities (Get Vulnerability Overview)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/uvem/v1/get_vulnerabilities",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "uvem", "v1", "get_vulnerabilities"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Vulnerability Overview, /uve/api/v4/dashboard/vulnerabilities/overview\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "XQL query",
+			"item": [
+				{
+					"name": "XQL to query the UVM dataset (Get Vulnerability Overview)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/start_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "start_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=uvm_findings | fields vulnerability_id, asset_id, severity | limit 100\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: Get Vulnerability Overview, /uve/api/v4/dashboard/vulnerabilities/overview dataset in(uvm_findings)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the UVM dataset (Get Vulnerability Overview Results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/get_query_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "get_query_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query_id\": \"<query_id_inv\",\n    \"pending_flag\": true,\n    \"limit\": 100,\n    \"format\": \"json\"\n  },\n  \"// Comment\": \"Prisma Cloud: Get Vulnerability Overview Results, /uve/api/v4/dashboard/vulnerabilities/overview dataset in(uvm_findings)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the UVM dataset (Download All Vulnerabilities by RQL)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/start_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "start_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=uvm_findings | fields vulnerability_id, asset_id, severity | limit 1000\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: Download All Vulnerabilities by RQL, /uve/api/v1/vulnerabilities/search/download dataset in(uvm_findings)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the UVM dataset (Download All Vulnerabilities by RQL Results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/get_query_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "get_query_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query_id\": \"<query_id_inv\",\n    \"pending_flag\": true,\n    \"limit\": 1000,\n    \"format\": \"json\"\n  },\n  \"// Comment\": \"Prisma Cloud: Download All Vulnerabilities by RQL Results, /uve/api/v1/vulnerabilities/search/download dataset in(uvm_findings)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the UVM dataset (LIST Alert Counts)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/start_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "start_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=uvm_findings | fields alert_id | limit 100\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: LIST Alert Counts, /alert/policy\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the UVM dataset (LIST Alert Counts Results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/get_query_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "get_query_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query_id\": \"<query_id_inv\",\n    \"pending_flag\": true,\n    \"limit\": 100,\n    \"format\": \"json\"\n  },\n  \"// Comment\": \"Prisma Cloud: LIST Alert Counts Results, /alert/policy\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Use XQL for specific issue details (Submit Job to List Alerts)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/start_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "start_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=issues | fields issue_id, status, created_time | limit 100\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: Submit Job to List Alerts, /alert/jobs 2.Use XQL for specific issue details.\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Use XQL for specific issue details (Submit Job to List Alerts Results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/get_query_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "get_query_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query_id\": \"<query_id_inv\",\n    \"pending_flag\": true,\n    \"limit\": 100,\n    \"format\": \"json\"\n  },\n  \"// Comment\": \"Prisma Cloud: Submit Job to List Alerts Results, /alert/jobs\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Start an XQL query (Perform Config Search by Query)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/start_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "start_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=asset_inventory | fields asset_id, asset_name | limit 100\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: Perform Config Search by Query, /search/api/v1/config\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get XQL query results (Perform Config Search by Query Results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/get_query_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "get_query_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query_id\": \"<query_id_inv\",\n    \"pending_flag\": true,\n    \"limit\": 100,\n    \"format\": \"json\"\n  },\n  \"// Comment\": \"Prisma Cloud: Perform Config Search by Query Results, /search/api/v1/config\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Start an XQL query + Get XQL query results (Get The Next Config Search Page)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/xql/start_xql_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "xql", "start_xql_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=asset_inventory | fields asset_id, asset_name | limit 1000\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: Get The Next Config Search Page, /search/config/page // For greater than 1000 results you must call : POST /public_api/v1/xql/get_query_results_stream\"\n}"
+						}
+					}
+				}
+			]
+		},
+        {
+					"name": "XQL to query the UVM dataset (Get Findings of an Asset)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/start_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "start_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=uvm_findings | fields asset_id, finding_id | limit 100\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: Get Findings of an Asset, /asm/api/v1/asset/:asset_id/finding dataset in(uvm_findings)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the UVM dataset (Get Findings of an Asset Results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/get_query_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "get_query_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query_id\": \"<query_id_inv\",\n    \"pending_flag\": true,\n    \"limit\": 100,\n    \"format\": \"json\"\n  },\n  \"// Comment\": \"Prisma Cloud: Get Findings of an Asset Results, /asm/api/v1/asset/:asset_id/finding\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the cloud_audit_logs dataset (Perform Event Search)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/start_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "start_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=cloud_audit_logs | fields event_id, event_type | limit 100\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: Perform Event Search, /search/event dataset in(cloud_audit_logs)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the cloud_audit_logs dataset (Perform Event Search Results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/get_query_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "get_query_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query_id\": \"<query_id_inv\",\n    \"pending_flag\": true,\n    \"limit\": 100,\n    \"format\": \"json\"\n  },\n  \"// Comment\": \"Prisma Cloud: Perform Event Search Results, /search/event\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the asset_inventory dataset (Perform Config Search)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/start_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "start_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=asset_inventory | fields asset_id, asset_name | limit 100\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: Perform Config Search, /search/config dataset in(asset_inventory)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the asset_inventory dataset (Perform Config Search Results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/get_query_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "get_query_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query_id\": \"<query_id_inv\",\n    \"pending_flag\": true,\n    \"limit\": 100,\n    \"format\": \"json\"\n  },\n  \"// Comment\": \"Prisma Cloud: Perform Config Search Results, /search/config\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the asset_inventory dataset (Perform Config Search V2)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/start_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "start_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=asset_inventory | fields asset_id, asset_name | limit 100\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: Perform Config Search V2, /search/api/v2/config dataset in(asset_inventory)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the asset_inventory dataset (Perform Config Search V2 Results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/get_query_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "get_query_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query_id\": \"<query_id_inv\",\n    \"pending_flag\": true,\n    \"limit\": 100,\n    \"format\": \"json\"\n  },\n  \"// Comment\": \"Prisma Cloud: Perform Config Search V2 Results, /search/api/v2/config\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the xdr_data dataset (Perform Network Search)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/start_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "start_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=xdr_data | fields event_id, event_type | limit 100\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: Perform Network Search, /search dataset in(xdr_data)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the xdr_data dataset (Perform Network Search Results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/get_query_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "get_query_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query_id\": \"<query_id_inv\",\n    \"pending_flag\": true,\n    \"limit\": 100,\n    \"format\": \"json\"\n  },\n  \"// Comment\": \"Prisma Cloud: Perform Network Search Results, /search\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the uvm_findings dataset (Get Vulnerable Assets by RQL)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/start_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "start_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=uvm_findings | fields asset_id, vulnerability_id | limit 100\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: Get Vulnerable Assets by RQL, /uve/api/v1/vulnerabilities/search/asset dataset in(uvm_findings)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the uvm_findings dataset (Get Vulnerable Assets by RQL Results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/get_query_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "get_query_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query_id\": \"<query_id_inv\",\n    \"pending_flag\": true,\n    \"limit\": 100,\n    \"format\": \"json\"\n  },\n  \"// Comment\": \"Prisma Cloud: Get Vulnerable Assets by RQL Results, /uve/api/v1/vulnerabilities/search/asset\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the cloud_audit_logs dataset (Get Raw Event Data)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/start_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "start_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=cloud_audit_logs | fields event_id, event_type | limit 100\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: Get Raw Event Data, /search/event/raw/:id dataset in(cloud_audit_logs)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the cloud_audit_logs dataset (Get Raw Event Data Results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/get_query_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "get_query_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query_id\": \"<query_id_inv\",\n    \"pending_flag\": true,\n    \"limit\": 100,\n    \"format\": \"json\"\n  },\n  \"// Comment\": \"Prisma Cloud: Get Raw Event Data Results, /search/event/raw/:id dataset in(cloud_audit_logs), | filter event_id = <event id>\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Start an XQL query + Get XQL query results (Get Permissions)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/xql/start_xql_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "xql", "start_xql_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=ciem_permissions_raw | fields permission_id, user_id | limit 100\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: Get Permissions, /api/v1/permission\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the ciem_permissions_raw dataset (Get Permissions V4)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/start_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "start_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=ciem_permissions_raw | fields permission_id, user_id | limit 100\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: Get Permissions V4, /iam/api/v4/search/permission dataset in(ciem_permissions_raw)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the ciem_permissions_raw dataset (Get Permissions V4 Results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/get_query_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "get_query_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query_id\": \"<query_id_inv\",\n    \"pending_flag\": true,\n    \"limit\": 100,\n    \"format\": \"json\"\n  },\n  \"// Comment\": \"Prisma Cloud: Get Permissions V4 Results, /iam/api/v4/search/permission\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the UVM dataset (Get CVE Overview - POST)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/start_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "start_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=uvm_findings | fields cve_id, severity | limit 100\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: Get CVE Overview, /uve/api/v2/cve-overview dataset in(uvm_findings)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the UVM dataset (Get CVE Overview - POST Results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/get_query_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "get_query_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query_id\": \"<query_id_inv\",\n    \"pending_flag\": true,\n    \"limit\": 100,\n    \"format\": \"json\"\n  },\n  \"// Comment\": \"Prisma Cloud: Get CVE Overview Results, /uve/api/v2/cve-overview\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the UVM dataset (Get Vulnerabilities by RQL)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/start_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "start_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=uvm_findings | fields vulnerability_id, asset_id | limit 100\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: Get Vulnerabilities by RQL, /uve/api/v1/vulnerabilities/search dataset in(uvm_findings)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the UVM dataset (Get Vulnerabilities by RQL Results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/get_query_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "get_query_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query_id\": \"<query_id_inv\",\n    \"pending_flag\": true,\n    \"limit\": 100,\n    \"format\": \"json\"\n  },\n  \"// Comment\": \"Prisma Cloud: Get Vulnerabilities by RQL Results, /uve/api/v1/vulnerabilities/search\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the UVM dataset (Get Vulnerability Overview - POST)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/start_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "start_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=uvm_findings | fields vulnerability_id, asset_id | limit 100\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: Get Vulnerability Overview, /uve/api/v4/dashboard/vulnerabilities/overview dataset in(uvm_findings)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the UVM dataset (Get Vulnerability Overview - POST Results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/get_query_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "get_query_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query_id\": \"<query_id_inv\",\n    \"pending_flag\": true,\n    \"limit\": 100,\n    \"format\": \"json\"\n  },\n  \"// Comment\": \"Prisma Cloud: Get Vulnerability Overview Results, /uve/api/v4/dashboard/vulnerabilities/overview\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the UVM dataset (Get CVE Details by ID V3)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/start_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "start_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=uvm_findings | fields cve_id, details | limit 100\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: Get CVE Details by ID V3, /uve/api/v3/vulnerabilities/download\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the UVM dataset (Get CVE Details by ID V3 Results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/get_query_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "get_query_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query_id\": \"<query_id_inv\",\n    \"pending_flag\": true,\n    \"limit\": 100,\n    \"format\": \"json\"\n  },\n  \"// Comment\": \"Prisma Cloud: Get CVE Details by ID V3 Results, /uve/api/v3/vulnerabilities/download\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the UVM dataset (Get Vulnerable Assets by CVE)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/start_query",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "start_query"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query\": \"dataset=uvm_findings | fields asset_id, vulnerability_id | limit 100\",\n    \"tenants\": [],\n    \"timeframe\": {\n      \"from\": 1598907600000,\n      \"to\": 1599080399000\n    }\n  },\n  \"// Comment\": \"Prisma Cloud: Get Vulnerable Assets by CVE, /uve/api/v1/dashboard/vulnerabilities/vuln-assets // For assets affected by a particular CVE, use XQL dataset in(uvm_findings)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "XQL to query the UVM dataset (Get Vulnerable Assets by CVE Results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/xql/get_query_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["xql", "get_query_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"query_id\": \"<query_id_inv\",\n    \"pending_flag\": true,\n    \"limit\": 100,\n    \"format\": \"json\"\n  },\n  \"// Comment\": \"Prisma Cloud: Get Vulnerable Assets by CVE Results, /uve/api/v1/dashboard/vulnerabilities/vuln-assets | filter vulnerability_id = <CVE-ID>\"\n}"
+						}
+					}
+				},
+		{
+			"name": "Vulnerabilities",
+			"item": [
+				{
+					"name": "Get list of vulnerabilities (Download All Vulnerabilities by RQL)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/uvem/v1/get_vulnerabilities",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "uvem", "v1", "get_vulnerabilities"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Download All Vulnerabilities by RQL, /uve/api/v1/vulnerabilities/search/download\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get vulnerability details (Get CVE Overview - POST)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/uvem/v1/vulnerabilities",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "uvem", "v1", "vulnerabilities"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get CVE Overview, /uve/api/v2/cve-overview dataset in(uvm_findings)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get list of vulnerabilities (Get Top Impacting Vulnerabilities - POST)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/uvem/v1/get_vulnerabilities",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "uvem", "v1", "get_vulnerabilities"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cvss_score\": {\"min\": 7.0, \"max\": 10.0},\n  \"epss_score\": {\"min\": 0.5, \"max\": 1.0},\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Top Impacting Vulnerabilities, /uve/api/v3/dashboard/vulnerabilities/prioritised-vuln // Use filters such as cvss_score, epss_score etc.\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get list of vulnerabilities (Get Vulnerabilities by RQL)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/uvem/v1/get_vulnerabilities",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "uvem", "v1", "get_vulnerabilities"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Vulnerabilities by RQL, /uve/api/v1/vulnerabilities/search dataset in(uvm_findings)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get list of vulnerabilities (Get Vulnerability Overview - POST)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/uvem/v1/get_vulnerabilities",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "uvem", "v1", "get_vulnerabilities"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Vulnerability Overview, /uve/api/v4/dashboard/vulnerabilities/overview\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get vulnerability details (Get CVE Details by ID V3)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/uvem/v1/vulnerabilities",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "uvem", "v1", "vulnerabilities"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get CVE Details by ID V3, /uve/api/v3/vulnerabilities/download // For CVE details use /public_api/uvem/v1/vulnerabilities\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Data Security Posture Management APIs",
+			"item": [
+				{
+					"name": "Get file inventory details (Get Asset file details by Id)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/data-security/objects/files",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "data-security", "objects", "files"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Asset file details by Id, /api.dig.security/v1/classification/asset-files/id\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get field inventory details (Get Asset fields details by Id)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/data-security/objects/fields",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "data-security", "objects", "fields"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Asset fields details by Id, /api.dig.security/v1/classification/asset-fields/id\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get data pattern inventory (Get Data Types by Id)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/data-security/data-patterns",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "data-security", "data-patterns"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Data Types by Id, /api.dig.security/v1/classification/data-types // 'Data Types' are now referred to as 'Data Patterns' in Cortex Cloud.\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Standards",
+			"item": [
+				{
+					"name": "Get compliance standards (List Compliance Standards)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/compliance/get_standards",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "compliance", "get_standards"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: List Compliance Standards, /compliance\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Add new standard (Add Compliance Standard)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/compliance/add_standard",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "compliance", "add_standard"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Add Compliance Standard, /compliance\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Edit existing standard (Update Compliance Standard)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/compliance/edit_standard",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "compliance", "edit_standard"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Update Compliance Standard, /compliance/:complianceId\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Delete standard (Delete Compliance Standard)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/compliance/delete_standard",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "compliance", "delete_standard"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Delete Compliance Standard, /compliance/:complianceId\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Step 1. Decide which compliance standard to use. (Get Compliance Statistics for Standard ID)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/compliance/get_standards",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "compliance", "get_standards"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Compliance Statistics for Standard ID, /v2/compliance/posture/:complianceId Step 2. Create a compliance assessment. Step 3. Review the results.\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get compliance standards (List Policy Compliance Standards)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/compliance/get_standards",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "compliance", "get_standards"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: List Policy Compliance Standards, /policy/compliance\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Controls",
+			"item": [
+				{
+					"name": "Add new control (Add Compliance Requirement)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/compliance/add_control",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "compliance", "add_control"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Add Compliance Requirement, /compliance/:complianceId/requirement\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Edit existing control (Update Compliance Requirement)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/compliance/edit_control",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "compliance", "edit_control"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Update Compliance Requirement, /compliance/requirement/:requirementId\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get compliance control by ID (Get Compliance Requirements by ID)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/compliance/get_control",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "compliance", "get_control"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Compliance Requirements by ID, /compliance/:complianceId/requirement/:requirementId\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get compliance controls (List Compliance Requirements)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/compliance/get_controls",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "compliance", "get_controls"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: List Compliance Requirements, /compliance/:complianceId/requirement\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Assessment profiles",
+			"item": [
+				{
+					"name": "Add assessment profile (No Prisma API for Assessment Profile)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/compliance/add_assessment_profile",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "compliance", "add_assessment_profile"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: No Prisma API for Assessment Profile, N/A\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Edit assessment profile (No Prisma API for Assessment Profile)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/compliance/edit_assessment_profile",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "compliance", "edit_assessment_profile"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: No Prisma API for Assessment Profile, N/A\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Add assessment profile (Get Compliance Statistics for Standard ID)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/compliance/add_assessment_profile",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "compliance", "add_assessment_profile"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Compliance Statistics for Standard ID, /v2/compliance/posture/:complianceId\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Add assessment profile (Get Compliance Standards results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/compliance/add_assessment_profile",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "compliance", "add_assessment_profile"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Compliance Standards results, /policy/compliance\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Assessment results",
+			"item": [
+				{
+					"name": "Get assessment profile results (Get Compliance Statistics Breakdown)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/compliance/get_assessment_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "compliance", "get_assessment_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Compliance Statistics Breakdown, /v2/compliance/posture\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get assessment profile results (Get Compliance Statistics for Standard ID)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/compliance/get_assessment_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "compliance", "get_assessment_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Compliance Statistics for Standard ID, /v2/compliance/posture/:complianceId\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get assessment profile results (Get Compliance Standards results)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/compliance/get_assessment_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "compliance", "get_assessment_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Compliance Standards results, /policy/compliance\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Asset groups",
+			"item": [
+				{
+					"name": "Get all or filtered asset groups (Get Resource Lists)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/asset-groups",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "asset-groups"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Resource Lists, /v1/resource_list // 'Resource Lists' are referred to as 'Asset Groups' in Cortex Cloud.\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get all or filtered asset groups (Get Resource List by ID)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/asset-groups",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "asset-groups"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Resource List by ID, /v1/resource_list/:id // In Cortex Cloud, Account Groups are referred to as Asset Groups.\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Create an Asset Group (Add Resource List)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/asset-groups/create",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "asset-groups", "create"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Add Resource List, /v1/resource_list\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Update an Asset Group (Update Resource List)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/asset-groups/update/{group_id}",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "asset-groups", "update", "{group_id}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Update Resource List, /v1/resource_list/:id\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Delete an Asset Group (Delete Resource List)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/asset-groups/delete/{group_id}",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "asset-groups", "delete", "{group_id}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Delete Resource List, /v1/resource_list/:id\"\n}"
+						}
+					}
+				},
+{
+					"name": "Get all or filtered asset groups (List Account Groups)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/asset-groups",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "asset-groups"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: List Account Groups, /cloud/group // In Cortex Cloud, Account Groups are referred to as Asset Groups.\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get all or filtered asset groups (Get All Collections)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/asset-groups",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "asset-groups"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get All Collections, /entitlement/api/v1/collection // In Cortex Cloud, Collections are referred to as 'Asset Groups'\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get all or filtered asset groups (Get Collection by ID)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/asset-groups",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "asset-groups"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": {\n      \"AND\": [\n        {\n          \"SEARCH_FIELD\": \"xdm.asset_group.id\",\n          \"SEARCH_TYPE\": \"EQ\",\n          \"SEARCH_VALUE\": \"<asset group id>\"\n        }\n      ]\n    },\n    \"on_demand_fields\": [\"xdm.host.ipv4_addresses\"],\n    \"sort\": [{\n      \"FIELD\": \"xdm.asset.name\",\n      \"ORDER\": \"DESC\"\n    }],\n    \"search_from\": 0,\n    \"search_to\": 1000\n  },\n  \"// Comment\": \"Prisma Cloud: Get Collection by ID, /entitlement/api/v1/collection/:id field =xdm.asset_group.id value = <asset group id>\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get all or filtered asset groups (Get Collections)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/asset-groups",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "asset-groups"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Collections, /api/v34.02/collections // In Cortex Cloud, Collections are referred to as 'Asset Groups'\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Create an Asset Group (Asset Inventory View V3 - GET)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/asset-groups/create",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "asset-groups", "create"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Asset Inventory View V3, /v3/inventory // To retrieve asset compliance status users can use Asset groups + Compliance APIs. // Create an Asset group with specific assets.\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Asset inventory",
+			"item": [
+				{
+					"name": "Get all or filtered assets (No specific Prisma API for fetching code assets)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/assets",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "assets"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": {\n      \"AND\": [\n        {\n          \"SEARCH_FIELD\": \"xdm.asset.type.class\",\n          \"SEARCH_TYPE\": \"EQ\",\n          \"SEARCH_VALUE\": \"Code\"\n        },\n        {\n          \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n          \"SEARCH_TYPE\": \"EQ\",\n          \"SEARCH_VALUE\": \"IaC Resource\"\n        }\n      ]\n    },\n    \"on_demand_fields\": [\"xdm.host.ipv4_addresses\"],\n    \"sort\": [{\n      \"FIELD\": \"xdm.asset.name\",\n      \"ORDER\": \"DESC\"\n    }],\n    \"search_from\": 0,\n    \"search_to\": 1000\n  },\n  \"// Comment\": \"Prisma Cloud: No specific Prisma API for fetching code assets, N/A // To fetch all 'Code Assets' field = xdm.asset.type.class value = Code field = xdm.asset.type.category value = IaC Resource\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get all or filtered assets (Get Dependencies)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/assets",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "assets"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": {\n      \"AND\": [\n        {\n          \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n          \"SEARCH_TYPE\": \"EQ\",\n          \"SEARCH_VALUE\": \"Software Package\"\n        }\n      ]\n    },\n    \"on_demand_fields\": [\"xdm.host.ipv4_addresses\"],\n    \"sort\": [{\n      \"FIELD\": \"xdm.asset.name\",\n      \"ORDER\": \"DESC\"\n    }],\n    \"search_from\": 0,\n    \"search_to\": 1000\n  },\n  \"// Comment\": \"Prisma Cloud: Get Dependencies, /code/api/v1/sbom/dependencies field = xdm.asset.type.category value = Software Package\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get all or filtered assets (Get All Applications)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/assets",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "assets"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": {\n      \"AND\": [\n        {\n          \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n          \"SEARCH_TYPE\": \"EQ\",\n          \"SEARCH_VALUE\": \"Application\"\n        }\n      ]\n    },\n    \"on_demand_fields\": [\"xdm.host.ipv4_addresses\"],\n    \"sort\": [{\n      \"FIELD\": \"xdm.asset.name\",\n      \"ORDER\": \"DESC\"\n    }],\n    \"search_from\": 0,\n    \"search_to\": 1000\n  },\n  \"// Comment\": \"Prisma Cloud: Get All Applications, /appid/api/v2/app field = xdm.asset.type.category value = Application\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get all or filtered assets (No Prisma API for CI Instances)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/assets",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "assets"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": {\n      \"AND\": [\n        {\n          \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n          \"SEARCH_TYPE\": \"EQ\",\n          \"SEARCH_VALUE\": \"CICD Instance\"\n        }\n      ]\n    },\n    \"on_demand_fields\": [\"xdm.host.ipv4_addresses\"],\n    \"sort\": [{\n      \"FIELD\": \"xdm.asset.name\",\n      \"ORDER\": \"DESC\"\n    }],\n    \"search_from\": 0,\n    \"search_to\": 1000\n  },\n  \"// Comment\": \"Prisma Cloud: No Prisma API for CI Instances, N/A field = xdm.asset.type.category value = CICD Instance\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get all or filtered assets (No Prisma API for VCS Organizations)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/assets",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "assets"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": {\n      \"AND\": [\n        {\n          \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n          \"SEARCH_TYPE\": \"EQ\",\n          \"SEARCH_VALUE\": \"VCS Organization\"\n        }\n      ]\n    },\n    \"on_demand_fields\": [\"xdm.host.ipv4_addresses\"],\n    \"sort\": [{\n      \"FIELD\": \"xdm.asset.name\",\n      \"ORDER\": \"DESC\"\n    }],\n    \"search_from\": 0,\n    \"search_to\": 1000\n  },\n  \"// Comment\": \"Prisma Cloud: No Prisma API for VCS Organizations, N/A field = xdm.asset.type.category value = VCS Organization\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get all or filtered assets (List Repository List)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/assets",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "assets"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": {\n      \"AND\": [\n        {\n          \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n          \"SEARCH_TYPE\": \"EQ\",\n          \"SEARCH_VALUE\": \"Repository\"\n        }\n      ]\n    },\n    \"on_demand_fields\": [\"xdm.host.ipv4_addresses\"],\n    \"sort\": [{\n      \"FIELD\": \"xdm.asset.name\",\n      \"ORDER\": \"DESC\"\n    }],\n    \"search_from\": 0,\n    \"search_to\": 1000\n  },\n  \"// Comment\": \"Prisma Cloud: List Repository List, /code/api/v1/repositories field = xdm.asset.type.category value = Repository\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get all or filtered assets (Get Data Assets)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/assets",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "assets"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": {\n      \"AND\": [\n        {\n          \"SEARCH_FIELD\": \"xdm.asset.type.class\",\n          \"SEARCH_TYPE\": \"EQ\",\n          \"SEARCH_VALUE\": \"Data\"\n        }\n      ]\n    },\n    \"on_demand_fields\": [\"xdm.host.ipv4_addresses\"],\n    \"sort\": [{\n      \"FIELD\": \"xdm.asset.name\",\n      \"ORDER\": \"DESC\"\n    }],\n    \"search_from\": 0,\n    \"search_to\": 1000\n  },\n  \"// Comment\": \"Prisma Cloud: Get Data Assets, /api.dig.security/v1/assets field = xdm.asset.type.class value = Data\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get schema of asset inventory (List Inventory Filters V2)",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/assets/schema",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "assets", "schema"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: List Inventory Filters V2, /filter/v2/inventory/suggest\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get all or filtered assets (Asset Inventory View V3 - POST)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/assets",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "assets"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": {\n      \"AND\": [\n        {\n          \"SEARCH_FIELD\": \"xdm.asset.type.class\",\n          \"SEARCH_TYPE\": \"EQ\",\n          \"SEARCH_VALUE\": \"Other\"\n        }\n      ]\n    },\n    \"on_demand_fields\": [\"xdm.host.ipv4_addresses\"],\n    \"sort\": [{\n      \"FIELD\": \"xdm.asset.name\",\n      \"ORDER\": \"DESC\"\n    }],\n    \"search_from\": 0,\n    \"search_to\": 1000\n  },\n  \"// Comment\": \"Prisma Cloud: Asset Inventory View V3, /v3/inventory\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get all or filtered assets (Asset Inventory View V3 - GET)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/assets",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "assets"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": {\n      \"AND\": [\n        {\n          \"SEARCH_FIELD\": \"xdm.asset.type.class\",\n          \"SEARCH_TYPE\": \"EQ\",\n          \"SEARCH_VALUE\": \"Other\"\n        }\n      ]\n    },\n    \"on_demand_fields\": [\"xdm.host.ipv4_addresses\"],\n    \"sort\": [{\n      \"FIELD\": \"xdm.asset.name\",\n      \"ORDER\": \"DESC\"\n    }],\n    \"search_from\": 0,\n    \"search_to\": 1000\n  },\n  \"// Comment\": \"Prisma Cloud: Asset Inventory View V3, /v3/inventory\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get asset by ID (Get Resource)",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/assets/{id}",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "assets", "{id}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Resource, /resource\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get asset by ID (Get Asset by ID)",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/assets/{id}",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "assets", "{id}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Asset by ID, /uai/v1/asset\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get all or filtered assets (Get Assets List)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/assets",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "assets"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": {\n      \"AND\": [\n        {\n          \"SEARCH_FIELD\": \"xdm.asset.provider\",\n          \"SEARCH_TYPE\": \"EQ\",\n          \"SEARCH_VALUE\": \"AWS\"\n        },\n        {\n          \"SEARCH_FIELD\": \"xdm.asset.type.name\",\n          \"SEARCH_TYPE\": \"EQ\",\n          \"SEARCH_VALUE\": \"EC2 instance\"\n        },\n        {\n          \"SEARCH_FIELD\": \"xdm.external_service.type\",\n          \"SEARCH_TYPE\": \"EQ\",\n          \"SEARCH_VALUE\": \"<service type>\"\n        }\n      ]\n    },\n    \"on_demand_fields\": [\"xdm.host.ipv4_addresses\"],\n    \"sort\": [{\n      \"FIELD\": \"xdm.asset.name\",\n      \"ORDER\": \"DESC\"\n    }],\n    \"search_from\": 0,\n    \"search_to\": 1000\n  },\n  \"// Comment\": \"Prisma Cloud: Get Assets List, /asm/api/v1/asset // Cloud Type : field = xdm.asset.provider value = <cloud provider e.g. AWS> // Asset Type : field = xdm.asset.type.name value = <asset type e.g. EC2 instance> // Service Type : field = xdm.external_service.type value = <name of service type>\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get all or filtered assets (Get External Surface Assets List)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/assets",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "assets"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": {\n      \"AND\": [\n        {\n          \"SEARCH_FIELD\": \"xdm.asset.type.class\",\n          \"SEARCH_TYPE\": \"EQ\",\n          \"SEARCH_VALUE\": \"External Surface\"\n        }\n      ]\n    },\n    \"on_demand_fields\": [\"xdm.host.ipv4_addresses\"],\n    \"sort\": [{\n      \"FIELD\": \"xdm.asset.name\",\n      \"ORDER\": \"DESC\"\n    }],\n    \"search_from\": 0,\n    \"search_to\": 1000\n  },\n  \"// Comment\": \"Prisma Cloud: Get External Surface Assets List, /asm/api/v1/asset field = xdm.asset.type.class value = External Surface\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "User and Role Management",
+			"item": [
+				{
+					"name": "Set a User Role (Update User Profile V2)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/rbac/set_user_role",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "rbac", "set_user_role"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Update User Profile V2, /v2/user/:id\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get Users (List Users V2)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/rbac/get_users",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "rbac", "get_users"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: List Users V2, /v2/user OR\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get User Groups (List Users V2)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/rbac/get_user_group",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "rbac", "get_user_group"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: List Users V2, /v2/user\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get User Groups (List User Role Names)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/rbac/get_user_group",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "rbac", "get_user_group"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: List User Role Names, /user/role/name\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get Roles (Get Permission Group by ID)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/rbac/get_roles",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "rbac", "get_roles"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Permission Group by ID, /authz/v1/permission_group/:id // In Cortex Cloud, permission groups are referred to as roles. Query a role by its name in the api body to get detailed information.\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "System management",
+			"item": [
+				{
+					"name": "System Health Check (Health Check)",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/healthcheck",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "healthcheck"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Health Check, /check\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Authentication settings",
+			"item": [
+				{
+					"name": "Get authentication settings for all configured domains (Get SAML Configuration)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/authentication-settings/get/settings",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "authentication-settings", "get", "settings"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get SAML Configuration, /authn/v1/saml/config\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "API Keys",
+			"item": [
+				{
+					"name": "Generate an API key (Login)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/api_keys/generate",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "api_keys", "generate"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Login, /login\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Delete API keys (Delete Access Key)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/api_keys/delete",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "api_keys", "delete"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Delete Access Key, /access_keys/:id\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get existing API keys (Get Access Key by ID)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/api_keys/get_api_keys",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "api_keys", "get_api_keys"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Access Key by ID, /access_keys/:id\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Cloud Integration Instance management",
+			"item": [
+				{
+					"name": "Get all or filtered integration instances (List Cloud Account Names - GET)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/cloud_onboarding/get_instances",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "cloud_onboarding", "get_instances"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: List Cloud Account Names, /cloud/name\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get integration instance details (Programmatic management of cloud accounts)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/cloud_onboarding/get_instance_details",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "cloud_onboarding", "get_instance_details"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Programmatic management of cloud accounts, Multiple, Cloud Accounts Edit an integration instance Delete the specified integration instances\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get integration instance details (Get Account Status)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/cloud_onboarding/get_instance_details",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "cloud_onboarding", "get_instance_details"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Account Status, /account/:accountId/config/status\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get all or filtered integration instances (Get all Cloud Accounts)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/cloud_onboarding/get_instances",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "cloud_onboarding", "get_instances"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get all Cloud Accounts, /cloud\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Cloud Cloud account management",
+			"item": [
+				{
+					"name": "Get accounts in the specified integration instances (Get Cloud Org Accounts)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/cloud_onboarding/get_accounts",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "cloud_onboarding", "get_accounts"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Cloud Org Accounts, /cloud/:cloud_type/:id/project\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get accounts in the specified integration instances (Get Cloud Account Details)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/cloud_onboarding/get_accounts",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "cloud_onboarding", "get_accounts"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Cloud Account Details, /cloud/:cloud_type/:id\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get accounts in the specified integration instances (Get Cloud Account Status (AWS))",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/cloud_onboarding/get_accounts",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "cloud_onboarding", "get_accounts"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Cloud Account Status (AWS), /cas/v1/cloud_account/status/aws\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get accounts in the specified integration instances (Get Cloud Account Status (Azure))",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/cloud_onboarding/get_accounts",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "cloud_onboarding", "get_accounts"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Cloud Account Status (Azure), /cas/v1/cloud_account/status/azure\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Cloud Infrastructure Entitlement Management APIs",
+			"item": [
+				{
+					"name": "Search CIEM Access (Get Permissions V4)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/ciem/access/search",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "ciem", "access", "search"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Permissions V4, /iam/api/v4/search/permission dataset in(ciem_permissions_raw)\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Search CIEM Access (Get Permission Accesses V3)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/ciem/access/search",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "ciem", "access", "search"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Permission Accesses V3, /iam/api/v3/permission/:permission-id/list_access\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "ASPM, CICD and Application Security APIs/Scan management",
+			"item": [
+				{
+					"name": "Get AppSec branch periodic scans (Get Code Review Runs Data)",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/appsec/v1/scans/periodic",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "appsec", "v1", "scans", "periodic"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Code Review Runs Data, /code/api/v1/development-pipeline/code-review/runs/data\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Cortex CLI",
+			"item": [
+				{
+					"name": "Get the latest version of the Cortex CLI (Get Current Checkov Version)",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/cli/releases/version",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "cli", "releases", "version"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Current Checkov Version, /code/api/v1/checkovVersion // Checkov API (replaced with Cortex CLI)\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "ASPM, CICD and Application Security APIs/Repositories",
+			"item": [
+				{
+					"name": "Get repositories (Get Repositories Page)",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/appsec/v1/repositories",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "appsec", "v1", "repositories"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Repositories Page, /code/api/v1/vcs-repository/repositories field = xdm.asset.type.category value = Repository OR\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get a repository (Search Repositories)",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/appsec/v1/repositories/{assetId}",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "appsec", "v1", "repositories", "{assetId}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Search Repositories, /code/api/v1/repositories/search\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get repositories (Get repositories)",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/appsec/v1/repositories",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "appsec", "v1", "repositories"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get repositories, /api/v1/vcs-repository/repositories\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "ASPM, CICD and Application Security APIs/Integrations",
+			"item": [
+				{
+					"name": "Update an AppSec integration (Integrate Multiple Repositories)",
+					"request": {
+						"method": "PUT",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/appsec/v1/integrations/{id}",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "appsec", "v1", "integrations", "{id}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Integrate Multiple Repositories, /code/api/v1/repositories\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Delete an AppSec integration (Delete Integration)",
+					"request": {
+						"method": "DELETE",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/appsec/v1/integrations/{id}",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "appsec", "v1", "integrations", "{id}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Delete Integration, N/A, No corresponding Prisma API\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "ASPM, CICD and Application Security APIs/SBOM management",
+			"item": [
+				{
+					"name": "Get an SBOM for the specified repository (Get SBOM Report)",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/appsec/v1/sbom/repository/{repoId}",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "appsec", "v1", "sbom", "repository", "{repoId}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get SBOM Report, /code/api/v1/bom/getBOMReport/:repoId\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "ASPM, CICD and Application Security APIs/Policies",
+			"item": [
+				{
+					"name": "Get an AppSec policy (Get All Enforcement Rules)",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/appsec/v1/policies/{policyId}",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "appsec", "v1", "policies", "{policyId}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get All Enforcement Rules, /code/api/v1/enforcement-rules\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Update an AppSec policy (Update Enforcement Rule)",
+					"request": {
+						"method": "PUT",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/appsec/v1/policies/{policyId}",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "appsec", "v1", "policies", "{policyId}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Update Enforcement Rule, /code/api/v1/enforcement-rules\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Create an AppSec policy (Create New Exception for Enforcement Rule)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/appsec/v1/policies",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "appsec", "v1", "policies"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Create New Exception for Enforcement Rule, /code/api/v1/enforcement-rules\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Delete an AppSec policy (Delete Exception)",
+					"request": {
+						"method": "DELETE",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/appsec/v1/policies/{policyId}",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "appsec", "v1", "policies", "{policyId}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Delete Exception, /code/api/v1/enforcement-rules/:ruleId\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Update an AppSec policy (Policy Preview)",
+					"request": {
+						"method": "PUT",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/appsec/v1/policies/{policyId}",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "appsec", "v1", "policies", "{policyId}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Policy Preview, /code/api/v1/policies/preview\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "ASPM, CICD and Application Security APIs/Rules",
+			"item": [
+				{
+					"name": "Get AppSec rules (Get Custom Policies Table Data)",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/appsec/v1/rules",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "appsec", "v1", "rules"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Custom Policies Table Data, /code/api/v1/policies/table/data\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Affected software",
+			"item": [
+				{
+					"name": "Get affected software (Get Impacted Distros for a Vulnerability)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/uvem/v1/get_affected_software",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "uvem", "v1", "get_affected_software"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Impacted Distros for a Vulnerability, /asm/api/v1/asset/vulnerability\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Cloud Workload Protection APIs/Policies",
+			"item": [
+				{
+					"name": "Get Policies List (Get Runtime Host Policy)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/uvm_public/v1/list_policies",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "uvm_public", "v1", "list_policies"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Runtime Host Policy, Runtime Host Policy Prisma has different apis for runtime policies such as :\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get CWP Policies (Get Image Vulnerability Policy)",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/cwp/policies",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "cwp", "policies"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Image Vulnerability Policy, Image Vulnerability Policy\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get CWP Policies (Get Runtime Serverless Policy)",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/cwp/policies",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "cwp", "policies"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Runtime Serverless Policy, Runtime Serverless Policy\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Create Policy Public (Set Host Runtime Policy)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/uvm_public/v1/create_policy",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "uvm_public", "v1", "create_policy"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Set Host Runtime Policy, Host Runtime Policy Prisma has different apis for runtime policies such as :\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Add CWP Policies (Set Container Runtime Policy)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/cwp/policies",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "cwp", "policies"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Set Container Runtime Policy, Container Runtime Policy\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Add CWP Policies (Set Serverless Runtime Policy)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/cwp/policies",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "cwp", "policies"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Set Serverless Runtime Policy, Serverless Runtime Policy\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Update Policy (Update Runtime Host Policy)",
+					"request": {
+						"method": "PUT",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/uvm_public/v1/update_policy/{id}",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "uvm_public", "v1", "update_policy", "{id}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Update Runtime Host Policy, Runtime Host Policy Prisma has different apis for runtime policies such as :\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Update a CWP policy by ID (Update Runtime Container Policy)",
+					"request": {
+						"method": "PUT",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/cwp/policies/{id}",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "cwp", "policies", "{id}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Update Runtime Container Policy, Runtime Container Policy\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Update a CWP policy by ID (Update Runtime Serverless Policy)",
+					"request": {
+						"method": "PUT",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/cwp/policies/{id}",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "cwp", "policies", "{id}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Update Runtime Serverless Policy, Runtime Serverless Policy\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Delete Policy (Delete a Custom Rule)",
+					"request": {
+						"method": "DELETE",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/uvm_public/v1/delete_policy/{id}",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "uvm_public", "v1", "delete_policy", "{id}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Delete a Custom Rule, /custom-rules/:id\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Delete a CWP policy by ID (Delete a Custom Rule)",
+					"request": {
+						"method": "DELETE",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/cwp/policies/{id}",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "cwp", "policies", "{id}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Delete a Custom Rule, /custom-rules/:id\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get CWP policies (Get Container Compliance Policy)",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/cwp/policies",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "cwp", "policies"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"COMPLIANCE\",\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Container Compliance Policy, /policies/compliance/container Type = COMPLIANCE\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get CWP policies (Get Host Compliance Policy)",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/cwp/policies",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "cwp", "policies"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"COMPLIANCE\",\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Host Compliance Policy, /policies/compliance/host Type = COMPLIANCE\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get CWP policies (Get Continuous Integration (CI) Image Compliance Policy)",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/cwp/policies",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "cwp", "policies"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"COMPLIANCE\",\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Get Continuous Integration (CI) Image Compliance Policy, /policies/compliance/ci/images Type = COMPLIANCE\"\n}"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Compliance Controls API",
+			"item": [
+				{
+					"name": "Add assessment profile results (Asset Inventory View V3 - GET)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/compliance/add_assessment_profile",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "compliance", "add_assessment_profile"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Asset Inventory View V3, /v3/inventory // Create Assessment Profile. // Get Assessment Profile results.\"\n}"
+						}
+					}
+				},
+				{
+					"name": "Get assessment profile results (Asset Inventory View V3 - GET)",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"url": {
+							"raw": "{{baseUrl}}/public_api/v1/compliance/get_assessment_results",
+							"host": ["{{baseUrl}}"],
+							"path": ["public_api", "v1", "compliance", "get_assessment_results"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"request_data\": {\n    \"filters\": []\n  },\n  \"// Comment\": \"Prisma Cloud: Asset Inventory View V3, /v3/inventory\"\n}"
+						}
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://api.cortex.paloaltonetworks.com",
+			"type": "string"
+		}
+	]
+}

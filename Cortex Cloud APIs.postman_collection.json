@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "5dced7f5-0cc4-44a7-b8a9-0ce0b13a8a99",
-		"name": "Cortex Cloud APIs 1.3",
+		"_postman_id": "aa740456-c38a-4449-9140-e7a38cb5587d",
+		"name": "Cortex Cloud APIs 1.3 IAM",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "34538003"
 	},
@@ -1203,6 +1203,507 @@
 					]
 				},
 				{
+					"name": "Identity and Access Management (IAM)",
+					"item": [
+						{
+							"name": "Roles",
+							"item": [
+								{
+									"name": "Get roles",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "https://{{fqdn}}/platform/iam/v1/role",
+											"protocol": "https",
+											"host": [
+												"{{fqdn}}"
+											],
+											"path": [
+												"platform",
+												"iam",
+												"v1",
+												"role"
+											]
+										},
+										"description": "Retrieves a list of roles and returns their attributes"
+									},
+									"response": []
+								},
+								{
+									"name": "Create role",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request_data\": {\n    \"component_permissions\": [\"rules_action\", \"wf_verdict_change\"],\n    \"dataset_permissions\": [\n      {\n        \"dataset_group_name\": \"xdr_data\",\n        \"permissions\": [\"xdr_data\"]\n      }\n    ],\n    \"description\": \"Test Role\",\n    \"pretty_name\": \"test_role_name\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{fqdn}}/platform/iam/v1/role",
+											"protocol": "https",
+											"host": [
+												"{{fqdn}}"
+											],
+											"path": [
+												"platform",
+												"iam",
+												"v1",
+												"role"
+											]
+										},
+										"description": "Create a new IAM role with component and dataset permissions"
+									},
+									"response": []
+								},
+								{
+									"name": "Delete role",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "https://{{fqdn}}/platform/iam/v1/role/{{role_id}}",
+											"protocol": "https",
+											"host": [
+												"{{fqdn}}"
+											],
+											"path": [
+												"platform",
+												"iam",
+												"v1",
+												"role",
+												"{{role_id}}"
+											]
+										},
+										"description": "Delete an existing role"
+									},
+									"response": []
+								},
+								{
+									"name": "Get permission config",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "https://{{fqdn}}/platform/iam/v1/role/permission-config",
+											"protocol": "https",
+											"host": [
+												"{{fqdn}}"
+											],
+											"path": [
+												"platform",
+												"iam",
+												"v1",
+												"role",
+												"permission-config"
+											]
+										},
+										"description": "Returns the current list of permissions available for the specified tenant"
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "User Groups",
+							"item": [
+								{
+									"name": "Get user groups",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "https://{{fqdn}}/platform/iam/v1/user-group",
+											"protocol": "https",
+											"host": [
+												"{{fqdn}}"
+											],
+											"path": [
+												"platform",
+												"iam",
+												"v1",
+												"user-group"
+											]
+										},
+										"description": "Retrieves a list of user groups and returns their attributes"
+									},
+									"response": []
+								},
+								{
+									"name": "Create user group",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request_data\": {\n    \"group_name\": \"test_group_name\",\n    \"role_id\": \"role_name_123\",\n    \"description\": \"Test Group\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{fqdn}}/platform/iam/v1/user-group",
+											"protocol": "https",
+											"host": [
+												"{{fqdn}}"
+											],
+											"path": [
+												"platform",
+												"iam",
+												"v1",
+												"user-group"
+											]
+										},
+										"description": "Create a new user group"
+									},
+									"response": []
+								},
+								{
+									"name": "Update user group",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request_data\": {\n    \"group_name\": \"test_group_name\",\n    \"role_id\": \"role_name_123\",\n    \"description\": \"Test Updated Group\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{fqdn}}/platform/iam/v1/user-group/{{group_id}}",
+											"protocol": "https",
+											"host": [
+												"{{fqdn}}"
+											],
+											"path": [
+												"platform",
+												"iam",
+												"v1",
+												"user-group",
+												"{{group_id}}"
+											]
+										},
+										"description": "Modify an existing user group"
+									},
+									"response": []
+								},
+								{
+									"name": "Delete user group",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "https://{{fqdn}}/platform/iam/v1/user-group/{{group_id}}",
+											"protocol": "https",
+											"host": [
+												"{{fqdn}}"
+											],
+											"path": [
+												"platform",
+												"iam",
+												"v1",
+												"user-group",
+												"{{group_id}}"
+											]
+										},
+										"description": "Delete an existing user group. Upon deletion, nested groups are not deleted, only relationships are removed"
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Users",
+							"item": [
+								{
+									"name": "Get users",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "https://{{fqdn}}/platform/iam/v1/user",
+											"protocol": "https",
+											"host": [
+												"{{fqdn}}"
+											],
+											"path": [
+												"platform",
+												"iam",
+												"v1",
+												"user"
+											]
+										},
+										"description": "Retrieves a list of all users and their respective properties"
+									},
+									"response": []
+								},
+								{
+									"name": "Get user by email",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "https://{{fqdn}}/platform/iam/v1/user/{{user_email}}",
+											"protocol": "https",
+											"host": [
+												"{{fqdn}}"
+											],
+											"path": [
+												"platform",
+												"iam",
+												"v1",
+												"user",
+												"{{user_email}}"
+											]
+										},
+										"description": "Retrieves a user and its respective properties"
+									},
+									"response": []
+								},
+								{
+									"name": "Update user",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request_data\": {\n    \"phone_number\": \"408-753-4000\",\n    \"status\": \"Active\",\n    \"role_id\": \"role_name_123\",\n    \"scope_entity_id\": \"test_entity\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{fqdn}}/platform/iam/v1/user/{{user_email}}",
+											"protocol": "https",
+											"host": [
+												"{{fqdn}}"
+											],
+											"path": [
+												"platform",
+												"iam",
+												"v1",
+												"user",
+												"{{user_email}}"
+											]
+										},
+										"description": "Update various user details. Pass empty string for role_id to remove a role"
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Scopes",
+							"item": [
+								{
+									"name": "Get scope",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "https://{{fqdn}}/platform/iam/v1/scope/{{entity_type}}/{{entity_id}}",
+											"protocol": "https",
+											"host": [
+												"{{fqdn}}"
+											],
+											"path": [
+												"platform",
+												"iam",
+												"v1",
+												"scope",
+												"{{entity_type}}",
+												"{{entity_id}}"
+											]
+										},
+										"description": "Retrieve scope details for a specific entity type and entity ID"
+									},
+									"response": []
+								},
+								{
+									"name": "Update scope",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request_data\": {\n    \"endpoints\": {\n      \"endpoint_groups\": {\n        \"names\": [\"test-eg-1\"],\n        \"mode\": \"scope\"\n      },\n      \"endpoint_filters\": {\n        \"filters\": [],\n        \"mode\": \"scope\"\n      }\n    }\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{fqdn}}/platform/iam/v1/scope/{{entity_type}}/{{entity_id}}",
+											"protocol": "https",
+											"host": [
+												"{{fqdn}}"
+											],
+											"path": [
+												"platform",
+												"iam",
+												"v1",
+												"scope",
+												"{{entity_type}}",
+												"{{entity_id}}"
+											]
+										},
+										"description": "Edit scope details for a specific entity type and entity ID"
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "API Keys",
+							"item": [
+								{
+									"name": "Get API key",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "https://{{fqdn}}/platform/iam/v1/api-key/{{api_key_id}}",
+											"protocol": "https",
+											"host": [
+												"{{fqdn}}"
+											],
+											"path": [
+												"platform",
+												"iam",
+												"v1",
+												"api-key",
+												"{{api_key_id}}"
+											]
+										},
+										"description": "Retrieves an API key and its respective properties"
+									},
+									"response": []
+								},
+								{
+									"name": "Update API key",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request_data\": {\n    \"roles\": [\"role_name_123\"],\n    \"security_level\": \"standard\",\n    \"comment\": \"useful comment\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{fqdn}}/platform/iam/v1/api-key/{{api_key_id}}",
+											"protocol": "https",
+											"host": [
+												"{{fqdn}}"
+											],
+											"path": [
+												"platform",
+												"iam",
+												"v1",
+												"api-key",
+												"{{api_key_id}}"
+											]
+										},
+										"description": "Edit an existing API key"
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
 					"name": "Cases",
 					"item": [
 						{
@@ -1708,7 +2209,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"request_data\": {\n    \"dataset_name\": \"k8s_controls_to_standards\",\n    // \"key_fields\": [\n    //   \"uid\",\n    //   \"username\"\n    // ],\n    \"data\": [\n            {\n                \"severity\": \"INFO\",\n                \"standard\": \"AKS\",\n                \"control_id\": \"4.4.1\",\n                \"_insert_time\": 1758796684000,\n                \"_update_time\": 1758796684000,\n                \"control_name\": \"Ensure latest CNI version is used\",\n                \"cwp_logic_id\": \"9238cdb0-d403-48aa-bdf4-c06e207b6568\",\n                \"cwp_rule_name\": \"Usage of CNI without support for Network Policies detected in Kubernetes Cluster\",\n                \"_collector_name\": \"Console\",\n                \"_collector_type\": \"Console\",\n                \"generate_findings\": \"True\",\n                \"generate_scan_logs\": \"True\",\n                \"control_description\": \"There are a variety of CNI plugins available for Kubernetes. If the CNI in use does not support Network Policies it may not be possible to effectively restrict traffic in the cluster.\",\n                \"cwp_scannable_asseset\": \"AZURE_KUBERNETES_CLUSTER\\\", \\\"EKS_CLUSTER\\\", \\\"GOOGLE_KUBERNETES_ENGINE_CONTAINER_CLUSTER\"\n            }\n        ]\n  }\n}"
+											"raw": "{\n  \"request_data\": {\n    \"dataset_name\": \"k8s_controls_to_standards\",\n    // \"key_fields\": [\n    //   \"uid\",\n    //   \"username\"\n    // ],\n    \"data\": [\n            {\n                \"severity\": \"INFO\",\n                \"standard\": \"AKS\",\n                \"control_id\": \"4.4.1\",\n                \"_insert_time\": 1758796684000,\n                \"_update_time\": 1758796684000,\n                \"control_name\": \"Ensure latest CNI version is used\",\n                \"cwp_logic_id\": \"9238cdb0-d403-48aa-bdf4-c06e207b6568\",\n                \"cwp_rule_name\": \"Usage of CNI without support for Network Policies detected in Kubernetes Cluster\",\n                \"_collector_name\": \"Console\",\n                \"_collector_type\": \"Console\",\n                \"generate_findings\": \"True\",\n                \"generate_scan_logs\": \"True\",\n                \"control_description\": \"There are a variety of CNI plugins available for Kubernetes. If the CNI in use does not support Network Policies it may not be possible to effectively restrict traffic in the cluster.\",\n                \"cwp_scannable_asseset\": \"AZURE_KUBERNETES_CLUSTER\\\", \\\"EKS_CLUSTER\\\", \\\"GOOGLE_KUBERNETES_ENGINE_CONTAINER_CLUSTER\"\n            },\n            {\n                \"severity\": \"INFO\",\n                \"standard\": \"EKS\",\n                \"control_id\": \"5.1.1\",\n                \"_insert_time\": 1758796684000,\n                \"_update_time\": 1758796684000,\n                \"control_name\": \"Ensure Image Vulnerability Scanning using Amazon ECR image scanning or a third party provider\",\n                \"cwp_logic_id\": \"bbd77cea-ec27-4aa6-808c-2b7a94a6d43c\",\n                \"cwp_rule_name\": \"Usage of image registry without vulnerability scanner in K8S\",\n                \"_collector_name\": \"Console\",\n                \"_collector_type\": \"Console\",\n                \"generate_findings\": \"True\",\n                \"generate_scan_logs\": \"True\",\n                \"control_description\": \"Scan images being deployed to Amazon EKS for vulnerabilities.\",\n                \"cwp_scannable_asseset\": \"AZURE_KUBERNETES_CLUSTER\\\", \\\"EKS_CLUSTER\\\", \\\"GOOGLE_KUBERNETES_ENGINE_CONTAINER_CLUSTER\"\n            },\n            {\n                \"severity\": \"INFO\",\n                \"standard\": \"GKE\",\n                \"control_id\": \"5.1.1\",\n                \"_insert_time\": 1758796684000,\n                \"_update_time\": 1758796684000,\n                \"control_name\": \"Ensure Image Vulnerability Scanning is enabled\",\n                \"cwp_logic_id\": \"bbd77cea-ec27-4aa6-808c-2b7a94a6d43c\",\n                \"cwp_rule_name\": \"Usage of image registry without vulnerability scanner in k8s\",\n                \"_collector_name\": \"Console\",\n                \"_collector_type\": \"Console\",\n                \"generate_findings\": \"True\",\n                \"generate_scan_logs\": \"True\",\n                \"control_description\": \"Note: GCR is now deprecated, being superseded by Artifact Registry starting 15th May 2024. Runtime Vulnerability scanning is available via GKE Security Posture\",\n                \"cwp_scannable_asseset\": \"AZURE_KUBERNETES_CLUSTER\\\", \\\"EKS_CLUSTER\\\", \\\"GOOGLE_KUBERNETES_ENGINE_CONTAINER_CLUSTER\"\n            },\n            {\n                \"severity\": \"INFO\",\n                \"standard\": \"AKS\",\n                \"control_id\": \"5.1.1\",\n                \"_insert_time\": 1758796684000,\n                \"_update_time\": 1758796684000,\n                \"control_name\": \"Ensure Image Vulnerability Scanning using Azure Defender image scanning or a third party provider\",\n                \"cwp_logic_id\": \"ba7580c6-a127-4061-a0a1-888f74b5023d\",\n                \"cwp_rule_name\": \"Usage of image registry without vulnerability scanner in k8s\",\n                \"_collector_name\": \"Console\",\n                \"_collector_type\": \"Console\",\n                \"generate_findings\": \"True\",\n                \"generate_scan_logs\": \"True\",\n                \"control_description\": \"Scan images being deployed to Azure (AKS) for vulnerabilities.\",\n                \"cwp_scannable_asseset\": \"AZURE_KUBERNETES_CLUSTER\\\", \\\"EKS_CLUSTER\\\", \\\"GOOGLE_KUBERNETES_ENGINE_CONTAINER_CLUSTER\"\n            },\n            {\n                \"severity\": \"INFO\",\n                \"standard\": \"GKE\",\n                \"control_id\": \"5.10.1\",\n                \"_insert_time\": 1758796684000,\n                \"_update_time\": 1758796684000,\n                \"control_name\": \"Ensure Kubernetes Web UI is Disabled\",\n                \"cwp_logic_id\": \"d58f9b18-c42f-4334-97fc-3e6a58744854\",\n                \"cwp_rule_name\": \"Google Kubernetes Engine(GKE) with enabled web dashboard detected\",\n                \"_collector_name\": \"Console\",\n                \"_collector_type\": \"Console\",\n                \"generate_findings\": \"True\",\n                \"generate_scan_logs\": \"True\",\n                \"control_description\": \"Note: The Kubernetes web UI (Dashboard) does not have admin access by default in GKE 1.7 and higher. The Kubernetes web UI is disabled by default in GKE 1.10 and higher. In GKE 1.15 and higher, the Kubernetes web UI add-on KubernetesDashboard is no longer supported as a managed add-on.\",\n                \"cwp_scannable_asseset\": \"AZURE_KUBERNETES_CLUSTER\\\", \\\"EKS_CLUSTER\\\", \\\"GOOGLE_KUBERNETES_ENGINE_CONTAINER_CLUSTER\"\n            },\n            {\n                \"severity\": \"INFO\",\n                \"standard\": \"GKE\",\n                \"control_id\": \"5.10.2\",\n                \"_insert_time\": 1758796684000,\n                \"_update_time\": 1758796684000,\n                \"control_name\": \"Ensure that Alpha clusters are not used for production workloads\",\n                \"cwp_logic_id\": \"0aac51e2-73eb-44f0-9005-2627323ef7d8\",\n                \"cwp_rule_name\": \"Usage of Alpha version detected in Google Kubernetes Engine(GKE)\",\n                \"_collector_name\": \"Console\",\n                \"_collector_type\": \"Console\",\n                \"generate_findings\": \"True\",\n                \"generate_scan_logs\": \"True\",\n                \"control_description\": \"Alpha clusters are not covered by an SLA and are not production-ready.\",\n                \"cwp_scannable_asseset\": \"AZURE_KUBERNETES_CLUSTER\\\", \\\"EKS_CLUSTER\\\", \\\"GOOGLE_KUBERNETES_ENGINE_CONTAINER_CLUSTER\"\n            },\n            {\n                \"severity\": \"INFO\",\n                \"standard\": \"GKE\",\n                \"control_id\": \"5.10.4\",\n                \"_insert_time\": 1758796684000,\n                \"_update_time\": 1758796684000,\n                \"control_name\": \"Ensure use of Binary Authorization\",\n                \"cwp_logic_id\": \"75ffc541-0efa-4a17-80a3-645ecc3c1789\",\n                \"cwp_rule_name\": \"Google Kubernetes Engine(GKE) with disabled binary authorization detected\",\n                \"_collector_name\": \"Console\",\n                \"_collector_type\": \"Console\",\n                \"generate_findings\": \"True\",\n                \"generate_scan_logs\": \"True\",\n                \"control_description\": \"Binary Authorization helps to protect supply-chain security by only allowing images with verifiable cryptographically signed metadata into the cluster.\",\n                \"cwp_scannable_asseset\": \"AZURE_KUBERNETES_CLUSTER\\\", \\\"EKS_CLUSTER\\\", \\\"GOOGLE_KUBERNETES_ENGINE_CONTAINER_CLUSTER\"\n            },\n            {\n                \"severity\": \"INFO\",\n                \"standard\": \"EKS\",\n                \"control_id\": \"5.4.1\",\n                \"_insert_time\": 1758796684000,\n                \"_update_time\": 1758796684000,\n                \"control_name\": \"Restrict Access to the Control Plane Endpoint\",\n                \"cwp_logic_id\": \"5602b88b-c0e6-4a0d-a820-b1d4056335ed\",\n                \"cwp_rule_name\": \"Api server not restricted to an allowlist of authorized IPs detected in Kubernetes cluster\",\n                \"_collector_name\": \"Console\",\n                \"_collector_type\": \"Console\",\n                \"generate_findings\": \"True\",\n                \"generate_scan_logs\": \"True\",\n                \"control_description\": \"Enable Endpoint Private Access to restrict access to the cluster\\\\\",\n                \"cwp_scannable_asseset\": \"AZURE_KUBERNETES_CLUSTER\\\", \\\"EKS_CLUSTER\\\", \\\"GOOGLE_KUBERNETES_ENGINE_CONTAINER_CLUSTER\"\n            },\n            {\n                \"severity\": \"INFO\",\n                \"standard\": \"AKS\",\n                \"control_id\": \"5.4.1\",\n                \"_insert_time\": 1758796684000,\n                \"_update_time\": 1758796684000,\n                \"control_name\": \"Restrict Access to the Control Plane Endpoint\",\n                \"cwp_logic_id\": \"b0318718-9fe4-4101-9381-e0e3b97454b1\",\n                \"cwp_rule_name\": \"Api server not restricted to an allowlist of authorized IPs detected in Kubernetes cluster\",\n                \"_collector_name\": \"Console\",\n                \"_collector_type\": \"Console\",\n                \"generate_findings\": \"True\",\n                \"generate_scan_logs\": \"True\",\n                \"control_description\": \"Enable Endpoint Private Access to restrict access to the cluster\\\\\",\n                \"cwp_scannable_asseset\": \"AZURE_KUBERNETES_CLUSTER\\\", \\\"EKS_CLUSTER\\\", \\\"GOOGLE_KUBERNETES_ENGINE_CONTAINER_CLUSTER\"\n            },\n            {\n                \"severity\": \"INFO\",\n                \"standard\": \"GKE\",\n                \"control_id\": \"5.4.1\",\n                \"_insert_time\": 1758796684000,\n                \"_update_time\": 1758796684000,\n                \"control_name\": \"Ensure the GKE Metadata Server is Enabled\",\n                \"cwp_logic_id\": \"be2d6bbb-8e0c-44e2-96f9-5775c8760d4e\",\n                \"cwp_rule_name\": \"Google Kubernetes Engine (GKE) with disabled metadata server found\",\n                \"_collector_name\": \"Console\",\n                \"_collector_type\": \"Console\",\n                \"generate_findings\": \"True\",\n                \"generate_scan_logs\": \"True\",\n                \"control_description\": \"Running the GKE Metadata Server prevents workloads from accessing sensitive instance metadata and facilitates Workload Identity.\",\n                \"cwp_scannable_asseset\": \"AZURE_KUBERNETES_CLUSTER\\\", \\\"EKS_CLUSTER\\\", \\\"GOOGLE_KUBERNETES_ENGINE_CONTAINER_CLUSTER\"\n            },\n            {\n                \"severity\": \"INFO\",\n                \"standard\": \"AKS\",\n                \"control_id\": \"5.4.2\",\n                \"_insert_time\": 1758796684000,\n                \"_update_time\": 1758796684000,\n                \"control_name\": \"Ensure clusters are Private Cluster enabled and Public Access Disabled\",\n                \"cwp_logic_id\": \"4f439543-248e-4b0d-8286-725f78758fad\",\n                \"cwp_rule_name\": \"Azure Kubernetes Service (AKS) Api server with public endpoint detected in Kubernetes cluster\",\n                \"_collector_name\": \"Console\",\n                \"_collector_type\": \"Console\",\n                \"generate_findings\": \"True\",\n                \"generate_scan_logs\": \"True\",\n                \"control_description\": \"Disable access to the Kubernetes API from outside the node network if it is not required.\",\n                \"cwp_scannable_asseset\": \"AZURE_KUBERNETES_CLUSTER\\\", \\\"EKS_CLUSTER\\\", \\\"GOOGLE_KUBERNETES_ENGINE_CONTAINER_CLUSTER\"\n            },\n            {\n                \"severity\": \"INFO\",\n                \"standard\": \"EKS\",\n                \"control_id\": \"5.4.2\",\n                \"_insert_time\": 1758796684000,\n                \"_update_time\": 1758796684000,\n                \"control_name\": \"Ensure clusters are created with Private Endpoint Enabled and Public Access Disabled\",\n            ]\n  }\n}"
 										},
 										"url": {
 											"raw": "https://{{fqdn}}/public_api/v1/xql/lookups/add_data",
@@ -1729,6 +2230,49 @@
 								},
 								{
 									"name": "Get data from a lookup dataset",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-xdr-auth-id",
+												"value": "{{api-key-id}}"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{api-key}}"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"request_data\": {\n    \"dataset_name\": \"k8s_controls_to_standards\",\n    \"filters\": [\n    //   {\n    //     \"uid\": \"123\",\n    //     \"username\": \"john\"\n    //   },\n    //   {\n    //     \"department\": \"dev\",\n    //     \"zipcode\": \"58674\"\n    //   }\n    ],\n    \"limit\": 20\n  }\n}"
+										},
+										"url": {
+											"raw": "https://{{fqdn}}/public_api/v1/xql/lookups/get_data",
+											"protocol": "https",
+											"host": [
+												"{{fqdn}}"
+											],
+											"path": [
+												"public_api",
+												"v1",
+												"xql",
+												"lookups",
+												"get_data"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get data from a lookup dataset Copy",
 									"request": {
 										"method": "POST",
 										"header": [
@@ -5703,48 +6247,6 @@
 										"v1",
 										"integrations",
 										"{id}"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Create AppSec Integrations",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "x-xdr-auth-id",
-										"value": "{{api-key-id}}"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{api-key}}"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json; charset=UTF-8"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json; charset=UTF-8"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n \"type\": \"AWS_CODE_BUILD\",\n \"config\": {\n \"domain\": {\n \"hostname\": \"example\",\n \"protocol\": \"http\"\n }\n },\n \"selectionType\": \"CURRENT_STATE\"\n}"
-								},
-								"url": {
-									"raw": "https://{{fqdn}}/public_api/appsec/v1/integrations",
-									"protocol": "https",
-									"host": [
-										"{{fqdn}}"
-									],
-									"path": [
-										"public_api",
-										"appsec",
-										"v1",
-										"integrations"
 									]
 								}
 							},

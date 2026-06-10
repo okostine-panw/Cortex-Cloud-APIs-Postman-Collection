@@ -1,10 +1,10 @@
 {
   "info": {
-    "_postman_id": "e82858e6-d514-4ed8-b8a5-33ae0a2797ae",
-    "name": "Cortex Cloud APIs 2.1",
+    "_postman_id": "25dc4d84-6d12-4d19-b722-0de9cfd41eed",
+    "name": "Cortex Cloud APIs 2.1.1",
+    "description": "\n\n---\n\n**Last Updated:** 2026-05-29\n\n**Recent Changes:**\n- Updated Issues API with 11 new fields\n- Updated Cases API documentation\n- Added new endpoint examples\n",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "34538003",
-    "description": "\n\n---\n\n**Last Updated:** 2026-05-29\n\n**Recent Changes:**\n- Updated Issues API with 11 new fields\n- Updated Cases API documentation\n- Added new endpoint examples\n"
+    "_exporter_id": "34538003"
   },
   "item": [
     {
@@ -377,6 +377,21 @@
             {
               "name": "Create an Asset Group Copy",
               "request": {
+                "auth": {
+                  "type": "apikey",
+                  "apikey": [
+                    {
+                      "key": "value",
+                      "value": "{{api-key}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "key",
+                      "value": "Authorization",
+                      "type": "string"
+                    }
+                  ]
+                },
                 "method": "POST",
                 "header": [
                   {
@@ -412,7 +427,13 @@
                     "asset-groups",
                     "create"
                   ]
-                },
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Create an Asset Group Copy 2",
+              "request": {
                 "auth": {
                   "type": "apikey",
                   "apikey": [
@@ -426,6 +447,42 @@
                       "value": "Authorization",
                       "type": "string"
                     }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x-xdr-auth-id",
+                    "value": "{{api-key-id}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "{{api-key}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request_data\": {\n    \"asset_group\": {\n      \"group_name\": \"OK-namespace-test\",\n      \"group_type\": \"Dynamic\",\n      \"group_description\": \"\",\n      \"membership_predicate\": {\n        \"OR\": [\n        //   {\n        //     \"AND\": [\n        //       {\n        //         \"SEARCH_FIELD\": \"xdm.organization.name\",\n        //         \"SEARCH_TYPE\": \"CONTAINS\",\n        //         \"SEARCH_VALUE\": \"ok\"\n        //       }\n        //     ]\n        //   },\n        //   {\n        //     \"AND\": [\n        //       {\n        //         \"SEARCH_FIELD\": \"xdm.asset.realm\",\n        //         \"SEARCH_TYPE\": \"WILDCARD\",\n        //         \"SEARCH_VALUE\": \"847766329087\"\n        //       }\n        //     ]\n        //   },\n        //   {\n        //     \"AND\": [\n        //       {\n        //         \"SEARCH_FIELD\": \"xdm.business_application.names\",\n        //         \"SEARCH_TYPE\": \"ARRAY_CONTAINS\",\n        //         \"SEARCH_VALUE\": \"PS Team\"\n        //       }\n        //     ]\n        //   },\n        //   {\n        //     \"AND\": [\n        //       {\n        //         \"SEARCH_FIELD\": \"xdm.kubernetes.resource.cluster\",\n        //         \"SEARCH_TYPE\": \"CONTAINS\",\n        //         \"SEARCH_VALUE\": \"test\"\n        //       }\n        //     ]\n        //   },\n          {\n            \"AND\": [\n              {\n                \"SEARCH_FIELD\": \"xdm.kubernetes.resource.namespace\",\n                \"SEARCH_TYPE\": \"CONTAINS\",\n                \"SEARCH_VALUE\": \"panw\"\n              }\n            ]\n          }\n        //   {\n        //     \"AND\": [\n        //       {\n        //         \"SEARCH_FIELD\": \"xdm.repository.name\",\n        //         \"SEARCH_TYPE\": \"CONTAINS\",\n        //         \"SEARCH_VALUE\": \"ok\"\n        //       }\n        //     ]\n        //   },\n        //   {\n        //     \"AND\": [\n        //       {\n        //         \"SEARCH_FIELD\": \"xdm.asset.tags\",\n        //         \"SEARCH_TYPE\": \"JSON_WILDCARD\",\n        //         \"SEARCH_VALUE\": {\n        //           \"key\": \"owner\",\n        //           \"value\": \"ok\"\n        //         }\n        //       }\n        //     ]\n        //   },\n        //   {\n        //     \"AND\": [\n        //       {\n        //         \"OR\": [\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.class\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Application\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.class\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Code\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.class\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Compute\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.class\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Data\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.class\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Identity\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.class\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"API\"\n        //           }\n        //         ]\n        //       }\n        //     ]\n        //   },\n        //   {\n        //     \"AND\": [\n        //       {\n        //         \"OR\": [\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Account\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"AI Pipeline Job\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"AI Workspace\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"API Endpoint\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"API Gateway\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"API Specification\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Application\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Audit Logs\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Backup\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Certificate\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Certificate Management\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"CICD Instance\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"CICD Pipeline\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Cloud Service Account\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Configuration Management\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Container Image\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Container Image Repository\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Container Instance\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Container Registry\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Database\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Dataset\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Device\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Disk\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Domain\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Event Management\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"General Device\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Human Identity\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"IaC Resource\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"IAM Access Keys\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"IAM Group\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"IAM Policy\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Image Registry\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Internet Gateway\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Key Management\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Kubernetes Cluster\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Kubernetes Resource\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Load Balancer\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Logging And Monitoring\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Model\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Model Endpoint\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Network Interface\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Network Security\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Notebook\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Organization\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Organizational Policy\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Organizational Unit\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Other\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Policy Statement\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Repository\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Secret Management\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Security Center\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Security Group\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Serverless Function\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Service\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Software Package\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Storage Bucket\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Subnet\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Threat Detection\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"VCS Organization\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Virtual Network\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"VM Image\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"VM Instance\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Vulnerability Management\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.type.category\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"Web\"\n        //           }\n        //         ]\n        //       }\n        //     ]\n        //   },\n        //   {\n        //     \"AND\": [\n        //       {\n        //         \"OR\": [\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"ACTIVE_DIRECTORY\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"AKAMAI\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"ALIBABA_CLOUD\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"ATT\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"AWS\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"AWS_CODE_BUILD\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"AWS_CODE_COMMIT\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"AZURE\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"AZURE_DEVOPS\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"AZURE_PIPELINES\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"AZURE_REPOS\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"BITBUCKET\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"BITBUCKET_DATACENTER\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"CHARTER_COMMUNICATIONS\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"CHECKMARX\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"CIRCLE_CI\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"CLOUDFLARE\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"CORTEX_CLI\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"DATABRICKS\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"DOCKER\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"DOCKER_HUB\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"FASTLY\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"GCP\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"GITHUB\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"GITHUB_ACTIONS\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"GITHUB_ENTERPRISE\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"GITLAB\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"GITLAB_CI\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"GITLAB_CONTAINER_REGISTRY\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"GITLAB_SELF_MANAGED\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"HARBOR\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"HCP_TFC_RUN_TASKS\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"HCP_TFE_RUN_TASKS\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"IBM_CLOUD\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"INCAPSULA\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"JENKINS\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"JFROG_ARTIFACTORY\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"MICROSOFT_OFFICE_365\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"NOT_APPLICABLE\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"OCI\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"OKTA\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"ON_PREM\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"ORACLE\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"OTHER\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"PANW\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"RACKSPACE\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"SEMGREP\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"SNOWFLAKE\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"SNYK\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"SONARQUBE\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"SONATYPE\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.provider\",\n        //             \"SEARCH_TYPE\": \"EQ\",\n        //             \"SEARCH_VALUE\": \"VERACODE\"\n        //           }\n        //         ]\n        //       }\n        //     ]\n        //   },\n        //   {\n        //     \"AND\": [\n        //       {\n        //         \"OR\": [\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.cloud.region\",\n        //             \"SEARCH_TYPE\": \"WILDCARD\",\n        //             \"SEARCH_VALUE\": \"ONPREM\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.cloud.region\",\n        //             \"SEARCH_TYPE\": \"WILDCARD\",\n        //             \"SEARCH_VALUE\": \"eu-central-1\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.cloud.region\",\n        //             \"SEARCH_TYPE\": \"WILDCARD\",\n        //             \"SEARCH_VALUE\": \"us-east-1\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.cloud.region\",\n        //             \"SEARCH_TYPE\": \"WILDCARD\",\n        //             \"SEARCH_VALUE\": \"eu-west-1\"\n        //           },\n        //           {\n        //             \"SEARCH_FIELD\": \"xdm.asset.cloud.region\",\n        //             \"SEARCH_TYPE\": \"WILDCARD\",\n        //             \"SEARCH_VALUE\": \"eu-west-2\"\n        //           }\n        //         ]\n        //       }\n        //     ]\n        //   },\n        //   {\n        //     \"AND\": [\n        //       {\n        //         \"SEARCH_FIELD\": \"xdm.organization.id\",\n        //         \"SEARCH_TYPE\": \"IS_EMPTY\",\n        //         \"SEARCH_VALUE\": \"&lt;No Value&gt;\"\n        //       }\n        //     ]\n        //   }\n        ]\n      }\n    }\n  }\n}"
+                },
+                "url": {
+                  "raw": "https://{{fqdn}}/public_api/v1/asset-groups/create",
+                  "protocol": "https",
+                  "host": [
+                    "{{fqdn}}"
+                  ],
+                  "path": [
+                    "public_api",
+                    "v1",
+                    "asset-groups",
+                    "create"
                   ]
                 }
               },
@@ -690,7 +747,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": null,
+                  "_postman_previewlanguage": "Text",
                   "header": [
                     {
                       "key": ":status",
@@ -774,7 +831,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": null,
+                  "_postman_previewlanguage": "Text",
                   "header": [
                     {
                       "key": ":status",
@@ -6617,6 +6674,21 @@
             {
               "name": "Get issue schema",
               "request": {
+                "auth": {
+                  "type": "apikey",
+                  "apikey": [
+                    {
+                      "key": "value",
+                      "value": "{{api-key}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "key",
+                      "value": "Authorization",
+                      "type": "string"
+                    }
+                  ]
+                },
                 "method": "POST",
                 "header": [
                   {
@@ -6654,22 +6726,7 @@
                     ""
                   ]
                 },
-                "description": "\nAPI Updated: May 2026\n\nNew Fields Added (11):\n- action_status: Action status tracking\n- agentic_assistant_id: AI assistant identifier\n- agentic_response_conversation_id: AI conversation tracking\n- agentic_response_status: AI response status\n- asset_cloud_account_names: Cloud account names (array)\n- asset_external_provider_ids: External provider IDs (array)\n- case_ids: Linked case IDs for bidirectional linkage (array)\n- exception_expiration: Exception expiration timestamp\n- exception_ids: Exception identifiers (array)\n- initial_evidence: Initial evidence data\n- is_excepted: Exception status flag\n\nResponse Wrapper Changes:\n- issues → DATA\n- total_count → TOTAL_COUNT\n- result_count → FILTER_COUNT\n\nEndpoints:\n- POST /public_api/v1/issue/search\n- POST /public_api/v1/issue/{issue-id}\n- POST /public_api/v1/issue/schema/\n- POST /public_api/v1/issue_exceptions/\n- POST /public_api/v1/issue_exceptions/disable/\n- POST /public_api/v1/issue_exceptions/search/\n\n\nReturns the schema for issue fields including data types and available values.",
-                "auth": {
-                  "type": "apikey",
-                  "apikey": [
-                    {
-                      "key": "value",
-                      "value": "{{api-key}}",
-                      "type": "string"
-                    },
-                    {
-                      "key": "key",
-                      "value": "Authorization",
-                      "type": "string"
-                    }
-                  ]
-                }
+                "description": "\nAPI Updated: May 2026\n\nNew Fields Added (11):\n- action_status: Action status tracking\n- agentic_assistant_id: AI assistant identifier\n- agentic_response_conversation_id: AI conversation tracking\n- agentic_response_status: AI response status\n- asset_cloud_account_names: Cloud account names (array)\n- asset_external_provider_ids: External provider IDs (array)\n- case_ids: Linked case IDs for bidirectional linkage (array)\n- exception_expiration: Exception expiration timestamp\n- exception_ids: Exception identifiers (array)\n- initial_evidence: Initial evidence data\n- is_excepted: Exception status flag\n\nResponse Wrapper Changes:\n- issues → DATA\n- total_count → TOTAL_COUNT\n- result_count → FILTER_COUNT\n\nEndpoints:\n- POST /public_api/v1/issue/search\n- POST /public_api/v1/issue/{issue-id}\n- POST /public_api/v1/issue/schema/\n- POST /public_api/v1/issue_exceptions/\n- POST /public_api/v1/issue_exceptions/disable/\n- POST /public_api/v1/issue_exceptions/search/\n\n\nReturns the schema for issue fields including data types and available values."
               },
               "response": []
             }
@@ -7908,6 +7965,21 @@
             {
               "name": "Test syslog integration",
               "request": {
+                "auth": {
+                  "type": "apikey",
+                  "apikey": [
+                    {
+                      "key": "value",
+                      "value": "{{api-key}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "key",
+                      "value": "Authorization",
+                      "type": "string"
+                    }
+                  ]
+                },
                 "method": "POST",
                 "header": [
                   {
@@ -7943,21 +8015,6 @@
                     "integrations",
                     "syslog",
                     "test"
-                  ]
-                },
-                "auth": {
-                  "type": "apikey",
-                  "apikey": [
-                    {
-                      "key": "value",
-                      "value": "{{api-key}}",
-                      "type": "string"
-                    },
-                    {
-                      "key": "key",
-                      "value": "Authorization",
-                      "type": "string"
-                    }
                   ]
                 }
               },
@@ -10151,42 +10208,6 @@
             {
               "name": "Create issue exception",
               "request": {
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "x-xdr-auth-id",
-                    "value": "{{api-key-id}}"
-                  },
-                  {
-                    "key": "Authorization",
-                    "value": "{{api-key}}"
-                  },
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "https://{{fqdn}}/public_api/v1/issue_exceptions/",
-                  "protocol": "https",
-                  "host": [
-                    "{{fqdn}}"
-                  ],
-                  "path": [
-                    "public_api",
-                    "v1",
-                    "issue_exceptions"
-                  ]
-                },
-                "description": "**Cortex Cloud 2.1**\n\nCreate an exception for one or more issues.\n\nExceptions allow you to suppress issues that are accepted risks or false positives.\n\nFields:\n- issue_ids: Array of issue IDs to except\n- expiration: Unix timestamp (ms) when exception expires\n- reason: Reason for the exception\n- comment: Additional context",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"request_data\": {\n    \"issue_ids\": [\n      \"issue-123\"\n    ],\n    \"expiration\": 1735689600000,\n    \"reason\": \"Accepted risk\",\n    \"comment\": \"Business justification for exception\"\n  }\n}"
-                },
                 "auth": {
                   "type": "apikey",
                   "apikey": [
@@ -10201,13 +10222,7 @@
                       "type": "string"
                     }
                   ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "Disable issue exception",
-              "request": {
+                },
                 "method": "POST",
                 "header": [
                   {
@@ -10227,8 +10242,69 @@
                     "value": "application/json"
                   }
                 ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request_data\": {\n    \"issue_ids\": [\n      \"issue-123\"\n    ],\n    \"expiration\": 1735689600000,\n    \"reason\": \"Accepted risk\",\n    \"comment\": \"Business justification for exception\"\n  }\n}"
+                },
                 "url": {
-                  "raw": "https://{{fqdn}}/public_api/v1/issue_exceptions/disable/",
+                  "raw": "https://{{fqdn}}/public_api/v1/issue_exceptions",
+                  "protocol": "https",
+                  "host": [
+                    "{{fqdn}}"
+                  ],
+                  "path": [
+                    "public_api",
+                    "v1",
+                    "issue_exceptions"
+                  ]
+                },
+                "description": "**Cortex Cloud 2.1**\n\nCreate an exception for one or more issues.\n\nExceptions allow you to suppress issues that are accepted risks or false positives.\n\nFields:\n- issue_ids: Array of issue IDs to except\n- expiration: Unix timestamp (ms) when exception expires\n- reason: Reason for the exception\n- comment: Additional context"
+              },
+              "response": []
+            },
+            {
+              "name": "Disable issue exception",
+              "request": {
+                "auth": {
+                  "type": "apikey",
+                  "apikey": [
+                    {
+                      "key": "value",
+                      "value": "{{api-key}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "key",
+                      "value": "Authorization",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x-xdr-auth-id",
+                    "value": "{{api-key-id}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "{{api-key}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request_data\": {\n    \"exception_ids\": [\n      \"exception-123\"\n    ]\n  }\n}"
+                },
+                "url": {
+                  "raw": "https://{{fqdn}}/public_api/v1/issue_exceptions/disable",
                   "protocol": "https",
                   "host": [
                     "{{fqdn}}"
@@ -10240,11 +10316,13 @@
                     "disable"
                   ]
                 },
-                "description": "**Cortex Cloud 2.1**\n\nDisable one or more issue exceptions.\n\nDisabling an exception will cause the issues to reappear in your issue list.",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"request_data\": {\n    \"exception_ids\": [\n      \"exception-123\"\n    ]\n  }\n}"
-                },
+                "description": "**Cortex Cloud 2.1**\n\nDisable one or more issue exceptions.\n\nDisabling an exception will cause the issues to reappear in your issue list."
+              },
+              "response": []
+            },
+            {
+              "name": "Search issue exceptions",
+              "request": {
                 "auth": {
                   "type": "apikey",
                   "apikey": [
@@ -10259,13 +10337,7 @@
                       "type": "string"
                     }
                   ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "Search issue exceptions",
-              "request": {
+                },
                 "method": "POST",
                 "header": [
                   {
@@ -10285,8 +10357,12 @@
                     "value": "application/json"
                   }
                 ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request_data\": {\n    \"filters\": [\n      {\n        \"field\": \"expiration\",\n        \"operator\": \"lte\",\n        \"value\": 1735689600000\n      }\n    ],\n    \"search_from\": 0,\n    \"search_to\": 100\n  }\n}"
+                },
                 "url": {
-                  "raw": "https://{{fqdn}}/public_api/v1/issue_exceptions/search/",
+                  "raw": "https://{{fqdn}}/public_api/v1/issue_exceptions/search",
                   "protocol": "https",
                   "host": [
                     "{{fqdn}}"
@@ -10298,11 +10374,18 @@
                     "search"
                   ]
                 },
-                "description": "**Cortex Cloud 2.1**\n\nSearch and filter issue exceptions.\n\nUse this to find exceptions that are expiring soon, exceptions for specific issues, or all active exceptions.\n\nResponse includes:\n- exception_id\n- issue_ids\n- expiration\n- reason\n- created_by\n- created_time",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"request_data\": {\n    \"filters\": [\n      {\n        \"field\": \"expiration\",\n        \"operator\": \"lte\",\n        \"value\": 1735689600000\n      }\n    ],\n    \"search_from\": 0,\n    \"search_to\": 100\n  }\n}"
-                },
+                "description": "**Cortex Cloud 2.1**\n\nSearch and filter issue exceptions.\n\nUse this to find exceptions that are expiring soon, exceptions for specific issues, or all active exceptions.\n\nResponse includes:\n- exception_id\n- issue_ids\n- expiration\n- reason\n- created_by\n- created_time"
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Prevention Policy",
+          "item": [
+            {
+              "name": "Edit prevention policy rules",
+              "request": {
                 "auth": {
                   "type": "apikey",
                   "apikey": [
@@ -10317,18 +10400,7 @@
                       "type": "string"
                     }
                   ]
-                }
-              },
-              "response": []
-            }
-          ]
-        },
-        {
-          "name": "Prevention Policy",
-          "item": [
-            {
-              "name": "Edit prevention policy rules",
-              "request": {
+                },
                 "method": "POST",
                 "header": [
                   {
@@ -10348,6 +10420,10 @@
                     "value": "application/json"
                   }
                 ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"request_data\": {\n    \"edits\": [\n      {\n        \"rule_id\": \"rule-123\",\n        \"action\": \"DISABLE\",\n        \"target_filter\": {\n          \"conditions\": [\n            {\n              \"field\": \"endpoint_group\",\n              \"operator\": \"eq\",\n              \"value\": \"production\"\n            }\n          ]\n        }\n      }\n    ]\n  }\n}"
+                },
                 "url": {
                   "raw": "https://{{fqdn}}/public_api/v1/policies/prevention/edit",
                   "protocol": "https",
@@ -10362,26 +10438,7 @@
                     "edit"
                   ]
                 },
-                "description": "**Cortex Cloud 2.1**\n\nPerform atomic edits to prevention policy rules.\n\nAllows you to enable/disable rules or modify their configuration for specific endpoint groups.\n\nSupports:\n- Targeted rule modifications\n- Bulk rule updates\n- Conditional application based on endpoint filters",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"request_data\": {\n    \"edits\": [\n      {\n        \"rule_id\": \"rule-123\",\n        \"action\": \"DISABLE\",\n        \"target_filter\": {\n          \"conditions\": [\n            {\n              \"field\": \"endpoint_group\",\n              \"operator\": \"eq\",\n              \"value\": \"production\"\n            }\n          ]\n        }\n      }\n    ]\n  }\n}"
-                },
-                "auth": {
-                  "type": "apikey",
-                  "apikey": [
-                    {
-                      "key": "value",
-                      "value": "{{api-key}}",
-                      "type": "string"
-                    },
-                    {
-                      "key": "key",
-                      "value": "Authorization",
-                      "type": "string"
-                    }
-                  ]
-                }
+                "description": "**Cortex Cloud 2.1**\n\nPerform atomic edits to prevention policy rules.\n\nAllows you to enable/disable rules or modify their configuration for specific endpoint groups.\n\nSupports:\n- Targeted rule modifications\n- Bulk rule updates\n- Conditional application based on endpoint filters"
               },
               "response": []
             }
@@ -13302,6 +13359,21 @@
         {
           "name": "Get billing contributors",
           "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{api-key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "GET",
             "header": [
               {
@@ -13335,7 +13407,13 @@
                 "contributors"
               ]
             },
-            "description": "**Cortex Cloud 2.1**\n\nRetrieve active contributors for billing purposes.\n\nReturns a list of users who have contributed to repositories and are counted for billing.",
+            "description": "**Cortex Cloud 2.1**\n\nRetrieve active contributors for billing purposes.\n\nReturns a list of users who have contributed to repositories and are counted for billing."
+          },
+          "response": []
+        },
+        {
+          "name": "Upload 3rd party SARIF findings",
+          "request": {
             "auth": {
               "type": "apikey",
               "apikey": [
@@ -13350,13 +13428,7 @@
                   "type": "string"
                 }
               ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Upload 3rd party SARIF findings",
-          "request": {
+            },
             "method": "POST",
             "header": [
               {
@@ -13376,6 +13448,10 @@
                 "value": "application/json"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sarif_data\": \"base64_encoded_sarif_content\"\n}"
+            },
             "url": {
               "raw": "https://{{fqdn}}/public_api/appsec/v1/collectors/{collectorId}",
               "protocol": "https",
@@ -13390,11 +13466,13 @@
                 "{collectorId}"
               ]
             },
-            "description": "**Cortex Cloud 2.1**\n\nUpload SARIF (Static Analysis Results Interchange Format) findings from third-party scanners.\n\nAllows integration of external security scanning tools into Cortex AppSec.",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"sarif_data\": \"base64_encoded_sarif_content\"\n}"
-            },
+            "description": "**Cortex Cloud 2.1**\n\nUpload SARIF (Static Analysis Results Interchange Format) findings from third-party scanners.\n\nAllows integration of external security scanning tools into Cortex AppSec."
+          },
+          "response": []
+        },
+        {
+          "name": "List data source instances",
+          "request": {
             "auth": {
               "type": "apikey",
               "apikey": [
@@ -13409,13 +13487,7 @@
                   "type": "string"
                 }
               ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "List data source instances",
-          "request": {
+            },
             "method": "GET",
             "header": [
               {
@@ -13448,7 +13520,13 @@
                 "data_source_instances"
               ]
             },
-            "description": "**Cortex Cloud 2.1**\n\nList all data source instances (replaces deprecated integrations API).\n\nReturns configured data sources for AppSec scanning.",
+            "description": "**Cortex Cloud 2.1**\n\nList all data source instances (replaces deprecated integrations API).\n\nReturns configured data sources for AppSec scanning."
+          },
+          "response": []
+        },
+        {
+          "name": "Create data source instance",
+          "request": {
             "auth": {
               "type": "apikey",
               "apikey": [
@@ -13463,13 +13541,7 @@
                   "type": "string"
                 }
               ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Create data source instance",
-          "request": {
+            },
             "method": "POST",
             "header": [
               {
@@ -13489,6 +13561,10 @@
                 "value": "application/json"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request_data\": {\n    \"name\": \"My Data Source\",\n    \"type\": \"GITHUB\",\n    \"configuration\": {}\n  }\n}"
+            },
             "url": {
               "raw": "https://{{fqdn}}/public_api/appsec/v1/data_source_instances",
               "protocol": "https",
@@ -13502,11 +13578,13 @@
                 "data_source_instances"
               ]
             },
-            "description": "**Cortex Cloud 2.1**\n\nCreate a new data source instance (replaces deprecated integrations API).\n\nConfigures a new data source for AppSec scanning.",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"request_data\": {\n    \"name\": \"My Data Source\",\n    \"type\": \"GITHUB\",\n    \"configuration\": {}\n  }\n}"
-            },
+            "description": "**Cortex Cloud 2.1**\n\nCreate a new data source instance (replaces deprecated integrations API).\n\nConfigures a new data source for AppSec scanning."
+          },
+          "response": []
+        },
+        {
+          "name": "Get data source instance",
+          "request": {
             "auth": {
               "type": "apikey",
               "apikey": [
@@ -13521,13 +13599,7 @@
                   "type": "string"
                 }
               ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Get data source instance",
-          "request": {
+            },
             "method": "GET",
             "header": [
               {
@@ -13561,7 +13633,13 @@
                 "{id}"
               ]
             },
-            "description": "**Cortex Cloud 2.1**\n\nGet details of a specific data source instance (replaces deprecated integrations API).",
+            "description": "**Cortex Cloud 2.1**\n\nGet details of a specific data source instance (replaces deprecated integrations API)."
+          },
+          "response": []
+        },
+        {
+          "name": "Update data source instance",
+          "request": {
             "auth": {
               "type": "apikey",
               "apikey": [
@@ -13576,13 +13654,7 @@
                   "type": "string"
                 }
               ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Update data source instance",
-          "request": {
+            },
             "method": "PUT",
             "header": [
               {
@@ -13602,6 +13674,10 @@
                 "value": "application/json"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request_data\": {\n    \"name\": \"Updated Data Source\",\n    \"configuration\": {}\n  }\n}"
+            },
             "url": {
               "raw": "https://{{fqdn}}/public_api/appsec/v1/data_source_instances/{id}",
               "protocol": "https",
@@ -13616,11 +13692,13 @@
                 "{id}"
               ]
             },
-            "description": "**Cortex Cloud 2.1**\n\nUpdate an existing data source instance (replaces deprecated integrations API).",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"request_data\": {\n    \"name\": \"Updated Data Source\",\n    \"configuration\": {}\n  }\n}"
-            },
+            "description": "**Cortex Cloud 2.1**\n\nUpdate an existing data source instance (replaces deprecated integrations API)."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete data source instance",
+          "request": {
             "auth": {
               "type": "apikey",
               "apikey": [
@@ -13635,13 +13713,7 @@
                   "type": "string"
                 }
               ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Delete data source instance",
-          "request": {
+            },
             "method": "DELETE",
             "header": [
               {
@@ -13675,22 +13747,7 @@
                 "{id}"
               ]
             },
-            "description": "**Cortex Cloud 2.1**\n\nDelete a data source instance (replaces deprecated integrations API).",
-            "auth": {
-              "type": "apikey",
-              "apikey": [
-                {
-                  "key": "value",
-                  "value": "{{api-key}}",
-                  "type": "string"
-                },
-                {
-                  "key": "key",
-                  "value": "Authorization",
-                  "type": "string"
-                }
-              ]
-            }
+            "description": "**Cortex Cloud 2.1**\n\nDelete a data source instance (replaces deprecated integrations API)."
           },
           "response": []
         }
@@ -17153,6 +17210,21 @@
         {
           "name": "Search vulnerability findings",
           "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{api-key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "POST",
             "header": [
               {
@@ -17172,8 +17244,12 @@
                 "value": "application/json"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request_data\": {\n    \"filters\": [\n      {\n        \"field\": \"severity\",\n        \"operator\": \"in\",\n        \"value\": [\n          \"CRITICAL\",\n          \"HIGH\"\n        ]\n      }\n    ],\n    \"search_from\": 0,\n    \"search_to\": 100,\n    \"sort\": {\n      \"field\": \"cvss_score\",\n      \"order\": \"desc\"\n    }\n  }\n}"
+            },
             "url": {
-              "raw": "https://{{fqdn}}/vulnerability-management/v1/vulnerability-finding/search/",
+              "raw": "https://{{fqdn}}/vulnerability-management/v1/vulnerability-finding/search",
               "protocol": "https",
               "host": [
                 "{{fqdn}}"
@@ -17185,11 +17261,13 @@
                 "search"
               ]
             },
-            "description": "**Cortex Cloud 2.1**\n\nPaginated search for vulnerability findings.\n\nSearch and filter CVE/asset records with advanced filtering capabilities.\n\nSupports:\n- Severity filtering\n- Asset filtering\n- CVSS score filtering\n- Exploit availability filtering\n- Pagination and sorting",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"request_data\": {\n    \"filters\": [\n      {\n        \"field\": \"severity\",\n        \"operator\": \"in\",\n        \"value\": [\n          \"CRITICAL\",\n          \"HIGH\"\n        ]\n      }\n    ],\n    \"search_from\": 0,\n    \"search_to\": 100,\n    \"sort\": {\n      \"field\": \"cvss_score\",\n      \"order\": \"desc\"\n    }\n  }\n}"
-            },
+            "description": "**Cortex Cloud 2.1**\n\nPaginated search for vulnerability findings.\n\nSearch and filter CVE/asset records with advanced filtering capabilities.\n\nSupports:\n- Severity filtering\n- Asset filtering\n- CVSS score filtering\n- Exploit availability filtering\n- Pagination and sorting"
+          },
+          "response": []
+        },
+        {
+          "name": "Export vulnerability findings snapshot",
+          "request": {
             "auth": {
               "type": "apikey",
               "apikey": [
@@ -17204,13 +17282,7 @@
                   "type": "string"
                 }
               ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Export vulnerability findings snapshot",
-          "request": {
+            },
             "method": "POST",
             "header": [
               {
@@ -17230,8 +17302,12 @@
                 "value": "application/json"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request_data\": {\n    \"filters\": [\n      {\n        \"field\": \"severity\",\n        \"operator\": \"eq\",\n        \"value\": \"CRITICAL\"\n      }\n    ],\n    \"format\": \"NDJSON\"\n  }\n}"
+            },
             "url": {
-              "raw": "https://{{fqdn}}/vulnerability-management/v1/vulnerability-finding/snapshot/",
+              "raw": "https://{{fqdn}}/vulnerability-management/v1/vulnerability-finding/snapshot",
               "protocol": "https",
               "host": [
                 "{{fqdn}}"
@@ -17243,11 +17319,13 @@
                 "snapshot"
               ]
             },
-            "description": "**Cortex Cloud 2.1**\n\nBulk export of vulnerability findings in NDJSON format.\n\nUse this for:\n- Large-scale data exports\n- Integration with data lakes\n- Compliance reporting\n- Backup and archival\n\nReturns newline-delimited JSON for efficient streaming.",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"request_data\": {\n    \"filters\": [\n      {\n        \"field\": \"severity\",\n        \"operator\": \"eq\",\n        \"value\": \"CRITICAL\"\n      }\n    ],\n    \"format\": \"NDJSON\"\n  }\n}"
-            },
+            "description": "**Cortex Cloud 2.1**\n\nBulk export of vulnerability findings in NDJSON format.\n\nUse this for:\n- Large-scale data exports\n- Integration with data lakes\n- Compliance reporting\n- Backup and archival\n\nReturns newline-delimited JSON for efficient streaming."
+          },
+          "response": []
+        },
+        {
+          "name": "Get vulnerability finding by ID",
+          "request": {
             "auth": {
               "type": "apikey",
               "apikey": [
@@ -17262,13 +17340,7 @@
                   "type": "string"
                 }
               ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Get vulnerability finding by ID",
-          "request": {
+            },
             "method": "POST",
             "header": [
               {
@@ -17301,22 +17373,7 @@
                 "{platform_id}"
               ]
             },
-            "description": "**Cortex Cloud 2.1**\n\nRetrieve a specific vulnerability finding by its platform ID.\n\nReturns complete details including:\n- CVE information\n- Affected assets\n- CVSS scores\n- Exploit availability\n- Remediation guidance",
-            "auth": {
-              "type": "apikey",
-              "apikey": [
-                {
-                  "key": "value",
-                  "value": "{{api-key}}",
-                  "type": "string"
-                },
-                {
-                  "key": "key",
-                  "value": "Authorization",
-                  "type": "string"
-                }
-              ]
-            }
+            "description": "**Cortex Cloud 2.1**\n\nRetrieve a specific vulnerability finding by its platform ID.\n\nReturns complete details including:\n- CVE information\n- Affected assets\n- CVSS scores\n- Exploit availability\n- Remediation guidance"
           },
           "response": []
         }
@@ -19653,7 +19710,7 @@
               }
             ],
             "url": {
-              "raw": "https://{{fqdn}}/public_api/v1/rule/18c893b6-041e-46a8-b52c-748fd77559db",
+              "raw": "https://{{fqdn}}/public_api/v1/rule/ebb233be-1d4e-4f39-8181-9b91905ce9c2",
               "protocol": "https",
               "host": [
                 "{{fqdn}}"
@@ -19662,7 +19719,7 @@
                 "public_api",
                 "v1",
                 "rule",
-                "18c893b6-041e-46a8-b52c-748fd77559db"
+                "ebb233be-1d4e-4f39-8181-9b91905ce9c2"
               ]
             }
           },
@@ -21547,6 +21604,21 @@
         {
           "name": "Import external scan assets (BYOS)",
           "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{api-key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "POST",
             "header": [
               {
@@ -21566,6 +21638,10 @@
                 "value": "application/json"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"request_data\": {\n    \"scanner_type\": \"THIRD_PARTY\",\n    \"scanner_name\": \"My Scanner\",\n    \"scan_time\": 1735689600000,\n    \"assets\": [\n      {\n        \"asset_id\": \"asset-123\",\n        \"asset_name\": \"server-01\",\n        \"vulnerabilities\": [\n          {\n            \"cve_id\": \"CVE-2024-1234\",\n            \"severity\": \"HIGH\",\n            \"cvss_score\": 7.5\n          }\n        ]\n      }\n    ]\n  }\n}"
+            },
             "url": {
               "raw": "https://{{fqdn}}/public_api/vulnerability-management/v1/external-scans/assets",
               "protocol": "https",
@@ -21580,11 +21656,13 @@
                 "assets"
               ]
             },
-            "description": "**Cortex Cloud 2.1 - Bring Your Own Scanner (BYOS)**\n\nSubmit assets and CVE findings from a third-party vulnerability scanner.\n\nReturns a job_id for async status polling.\n\nUse this to integrate external vulnerability scanners into Cortex vulnerability management.",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"request_data\": {\n    \"scanner_type\": \"THIRD_PARTY\",\n    \"scanner_name\": \"My Scanner\",\n    \"scan_time\": 1735689600000,\n    \"assets\": [\n      {\n        \"asset_id\": \"asset-123\",\n        \"asset_name\": \"server-01\",\n        \"vulnerabilities\": [\n          {\n            \"cve_id\": \"CVE-2024-1234\",\n            \"severity\": \"HIGH\",\n            \"cvss_score\": 7.5\n          }\n        ]\n      }\n    ]\n  }\n}"
-            },
+            "description": "**Cortex Cloud 2.1 - Bring Your Own Scanner (BYOS)**\n\nSubmit assets and CVE findings from a third-party vulnerability scanner.\n\nReturns a job_id for async status polling.\n\nUse this to integrate external vulnerability scanners into Cortex vulnerability management."
+          },
+          "response": []
+        },
+        {
+          "name": "Get external scan job status",
+          "request": {
             "auth": {
               "type": "apikey",
               "apikey": [
@@ -21599,13 +21677,7 @@
                   "type": "string"
                 }
               ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Get external scan job status",
-          "request": {
+            },
             "method": "GET",
             "header": [
               {
@@ -21641,22 +21713,7 @@
                 "{job_id}"
               ]
             },
-            "description": "**Cortex Cloud 2.1 - BYOS**\n\nPoll the status of a BYOS import job.\n\nReturns:\n- job_id\n- status (PENDING, PROCESSING, COMPLETED, FAILED)\n- assets_processed\n- vulnerabilities_imported\n- errors (if any)",
-            "auth": {
-              "type": "apikey",
-              "apikey": [
-                {
-                  "key": "value",
-                  "value": "{{api-key}}",
-                  "type": "string"
-                },
-                {
-                  "key": "key",
-                  "value": "Authorization",
-                  "type": "string"
-                }
-              ]
-            }
+            "description": "**Cortex Cloud 2.1 - BYOS**\n\nPoll the status of a BYOS import job.\n\nReturns:\n- job_id\n- status (PENDING, PROCESSING, COMPLETED, FAILED)\n- assets_processed\n- vulnerabilities_imported\n- errors (if any)"
           },
           "response": []
         }
@@ -21707,7 +21764,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"filter\": {\n    \"AND\": [\n    //   {\n    //     \"SEARCH_FIELD\": \"id\",\n    //     \"SEARCH_TYPE\": \"CONTAINS\",\n    //     \"SEARCH_VALUE\": \"b2b1279e-8760-44a8-8dca-bcc4508f8ce7\"\n    //   },\n      {\n        \"SEARCH_FIELD\": \"name\",\n        \"SEARCH_TYPE\": \"CONTAINS\",\n        \"SEARCH_VALUE\": \"-prisma_cloud_copy\"\n      }\n    ]\n  },\n  \"search_from\": 0,\n  \"search_to\": 50,\n  \"sort\": [\n    {\n      \"FIELD\": \"name\",\n      \"ORDER\": \"ASC\"\n    }\n  ]\n}",
+                  "raw": "{\n  \"filter\": {\n    \"AND\": [\n    //   {\n    //     \"SEARCH_FIELD\": \"id\",\n    //     \"SEARCH_TYPE\": \"CONTAINS\",\n    //     \"SEARCH_VALUE\": \"b2b1279e-8760-44a8-8dca-bcc4508f8ce7\"\n    //   },\n    //   {\n    //     \"SEARCH_FIELD\": \"name\",\n    //     \"SEARCH_TYPE\": \"CONTAINS\",\n    //     \"SEARCH_VALUE\": \"-prisma_cloud_copy\"\n    //   }\n    ]\n  },\n  \"search_from\": 0,\n  \"search_to\": 50,\n  \"sort\": [\n    {\n      \"FIELD\": \"name\",\n      \"ORDER\": \"ASC\"\n    }\n  ]\n}",
                   "options": {
                     "raw": {
                       "headerFamily": "json",

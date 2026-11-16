@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "25dc4d84-6d12-4d19-b722-0de9cfd41eed",
 		"name": "Cortex Cloud APIs 2.3",
-		"description": "\n\n---\n\n**Last Updated:** 2026-11-10\n\n**Recent Changes (Cortex Cloud 2.3):**\n- 46 requests labelled as new in Cortex Cloud 2.3: AppSec policy exceptions, attestation public keys and pipelines, bulk application import, Cloud Onboarding manual onboarding and account scan configuration, compliance report download URL, analytics rule severity override, agent downgrade, ASM data upload and removal, SSO users, object access, issue exclusion rules\n- SBOM management requests moved to the query-parameter form (repoId, orgName)\n- CWP asset SBOM request updated to the new format and output_format values; attributes replaced by fields\n- 2.3 notes added to case search, issue search, distributions, disable prevention rules, correlation rules, dashboards, applications, AppSec policies, notification rules, asset search and outpost requests\n- Also covers the XSIAM and XDR API references (no request changes in XSIAM 4.0 / XDR 6.0 relative to the 2.2 file)\n\n**Previous (Cortex Cloud 2.2):** Forensics, Unified Rules, Cloud Consumption Dashboard, Broker VM, CIEM path changes, vulnerability finding filter schema, full reference sync\n",
+		"description": "\n\n---\n\n**Last Updated:** 2026-11-16\n\n**Documentation update 2026-11-16:**\n- Compliance controls: add and edit control accept free-text category and subcategory (created when missing) plus category_description and subcategory_description\n- Compliance rules: add_rules_to_control documents the full list of rule types; k8s and CI_CD deprecated\n\n**Recent Changes (Cortex Cloud 2.3):**\n- 46 requests labelled as new in Cortex Cloud 2.3: AppSec policy exceptions, attestation public keys and pipelines, bulk application import, Cloud Onboarding manual onboarding and account scan configuration, compliance report download URL, analytics rule severity override, agent downgrade, ASM data upload and removal, SSO users, object access, issue exclusion rules\n- SBOM management requests moved to the query-parameter form (repoId, orgName)\n- CWP asset SBOM request updated to the new format and output_format values; attributes replaced by fields\n- 2.3 notes added to case search, issue search, distributions, disable prevention rules, correlation rules, dashboards, applications, AppSec policies, notification rules, asset search and outpost requests\n- Also covers the XSIAM and XDR API references (no request changes in XSIAM 4.0 / XDR 6.0 relative to the 2.2 file)\n\n**Previous (Cortex Cloud 2.2):** Forensics, Unified Rules, Cloud Consumption Dashboard, Broker VM, CIEM path changes, vulnerability finding filter schema, full reference sync\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "34538003"
 	},
@@ -21660,7 +21660,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"request_data\": {\n        \"control_name\": \"control name\",\n        \"category\": \"Network Configuration\",\n        \"subcategory\": \"4.2\"\n    }\n}"
+									"raw": "{\n    \"request_data\": {\n        \"control_name\": \"control name\",\n        \"category\": \"Network Configuration\",\n        \"category_description\": \"Description of the category\",\n        \"subcategory\": \"4.2\",\n        \"subcategory_description\": \"Description of the subcategory\"\n    }\n}\n// Updated 2026-11-16: new optional fields category_description and subcategory_description\n// category / subcategory are free text: an existing value attaches the control to it, any other value creates a new category or subcategory\n// Values are stored in Title Case (\"my custom category\" becomes \"My Custom Category\"), so a typo creates a new category instead of an error\n// Limits: category and subcategory 300 characters; category_description and subcategory_description 3000 characters"
 								},
 								"url": {
 									"raw": "https://{{fqdn}}/public_api/v1/compliance/add_control",
@@ -21674,7 +21674,8 @@
 										"compliance",
 										"add_control"
 									]
-								}
+								},
+								"description": "**Updated 2026-11-16:** `category` and `subcategory` accept free-text values and create the category or subcategory when it does not exist; new optional `category_description` and `subcategory_description` fields.\n\nReference: https://cortex-docs.paloaltonetworks.com/cortex-cloud-api/compliance-controls/controls"
 							},
 							"response": []
 						},
@@ -21774,7 +21775,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"request_data\": {\n        \"id\": \"string\",\n        \"control_name\": \"string\",\n        \"description\": \"string\",\n        \"category\": \"string\",\n        \"subcategory\": \"string\"\n    }\n}"
+									"raw": "{\n    \"request_data\": {\n        \"id\": \"string\",\n        \"control_name\": \"string\",\n        \"description\": \"string\",\n        \"category\": \"string\",\n        \"category_description\": \"Description of the category\",\n        \"subcategory\": \"string\",\n        \"subcategory_description\": \"Description of the subcategory\"\n    }\n}\n// Updated 2026-11-16: new optional fields category_description and subcategory_description\n// category / subcategory are free text: an existing value attaches the control to it, any other value creates a new category or subcategory\n// Values are stored in Title Case (\"my custom category\" becomes \"My Custom Category\"), so a typo creates a new category instead of an error\n// Limits: category and subcategory 300 characters; category_description and subcategory_description 3000 characters"
 								},
 								"url": {
 									"raw": "https://{{fqdn}}/public_api/v1/compliance/edit_control",
@@ -21788,7 +21789,8 @@
 										"compliance",
 										"edit_control"
 									]
-								}
+								},
+								"description": "**Updated 2026-11-16:** `category` and `subcategory` accept free-text values and create the category or subcategory when it does not exist; new optional `category_description` and `subcategory_description` fields.\n\nReference: https://cortex-docs.paloaltonetworks.com/cortex-cloud-api/compliance-controls/controls"
 							},
 							"response": []
 						},
@@ -22366,7 +22368,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"request_data\": {\n        \"control_id\": \"string\",\n        \"rules\": [\n            {\n                \"name\": \"string\",\n                \"description\": \"string\",\n                \"type\": \"Identity\",\n                \"logical_id\": \"string\",\n                \"severity\": \"low\",\n                \"scannable_asset_types\": [\n                    \"KUBERNETES_NODE\"\n                ],\n                \"remediation_steps\": \"string\",\n                \"generate_findings\": true,\n                \"generate_issues\": true,\n                \"generate_scan_logs\": true,\n                \"enabled\": true\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"request_data\": {\n        \"control_id\": \"string\",\n        \"rules\": [\n            {\n                \"name\": \"string\",\n                \"description\": \"string\",\n                \"type\": \"Identity\",\n                \"logical_id\": \"string\",\n                \"severity\": \"low\",\n                \"scannable_asset_types\": [\n                    \"KUBERNETES_NODE\"\n                ],\n                \"remediation_steps\": \"string\",\n                \"generate_findings\": true,\n                \"generate_issues\": true,\n                \"generate_scan_logs\": true,\n                \"enabled\": true\n            }\n        ]\n    }\n}\n// Updated 2026-11-16: rule \"type\" accepts Identity, Kubernetes, VM, Config, Data, CI/CD, AI, ASM, Graph, Saas\n// \"k8s\" and \"CI_CD\" are deprecated: use \"Kubernetes\" and \"CI/CD\""
 								},
 								"url": {
 									"raw": "https://{{fqdn}}/public_api/v1/compliance/add_rules_to_control",
@@ -22380,7 +22382,8 @@
 										"compliance",
 										"add_rules_to_control"
 									]
-								}
+								},
+								"description": "**Updated 2026-11-16:** rule `type` now documents the full list of values (previously only `Identity`); `k8s` and `CI_CD` are deprecated in favour of `Kubernetes` and `CI/CD`.\n\nReference: https://cortex-docs.paloaltonetworks.com/cortex-cloud-api/compliance-controls/rules"
 							},
 							"response": []
 						},
